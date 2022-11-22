@@ -4,11 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta property="og:title" content="Pendaftaran Santri Tahfidz Nurul Falah 2" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{asset('thumbnail.png')}}" />
+    <meta property="og:description" content="Telah dibuka pendaftaran santri tahfidz Nurul Falah 2 Periode 2023 - 2024" />
+    <meta property="og:url" content="http://nf2.nurulfalah.org" />
+    <meta name="theme-color" content="#5FA570">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />
+
     <title>Nurul Falah 2</title>
     <meta name="AdsBot-Google" content="noindex follow" />
-    <meta name="description" content="Nurul Falah 2 Pandaan">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/nf23.png" />
 
