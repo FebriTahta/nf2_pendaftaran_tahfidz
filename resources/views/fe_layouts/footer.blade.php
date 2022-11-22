@@ -4,7 +4,7 @@
         <div class="grid grid-cols-12 gap-x-[30px] mb-[-30px]">
             <div class="col-span-12 sm:col-span-6 lg:col-span-4 mb-[30px]">
                 <a href="index.html" class="block mb-[25px]">
-                    <img src="assets/images/logo/nf23.png" width="99" height="46" loading=lazy alt="footer logo">
+                    <img src="{{asset('assets/images/logo/nf23.png')}}" width="99" height="46" loading=lazy alt="footer logo">
                 </a>
                 <p class="mb-[5px] xl:mb-[40px] max-w-[270px]">Pondok Pesantren Al Quran Nurul Falah 2 Pandaan Pasuruan Jawa Timur </p>
                 {{-- <p class="text-sm hidden md:block">&copy; <a href="https://themeforest.net/user/hastech/portfolio" class="text-secondary">HasTech.</a> All Rights Reserved - Privacy Policy</p> --}}
@@ -72,20 +72,20 @@
 <!-- JS Vendor, Plugins & Activation Script Files -->
 
 <!-- Vendors JS -->
-<script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="{{asset('assets/js/vendor/modernizr-3.11.7.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/jquery-migrate-3.3.2.min.js')}}"></script>
 <!-- Plugins JS -->
-<script src="assets/js/plugins/swiper-bundle.min.js"></script>
-<script src="assets/js/plugins/popper.min.js"></script>
-<script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
-<script src="assets/js/plugins/parallax.min.js"></script>
-<script src="assets/js/plugins/jquery.waypoints.js"></script>
-<script src="assets/js/plugins/jquery.counterup.min.js"></script>
-<script src="assets/js/plugins/jquery.nice-select.min.js"></script>
+<script src="{{asset('assets/js/plugins/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/popper.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.ajaxchimp.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/parallax.min.j')}}s"></script>
+<script src="{{asset('assets/js/plugins/jquery.waypoints.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.nice-select.min.js')}}"></script>
 <!-- Activation JS -->
-<script src="assets/js/main.js"></script>
+<script src="{{asset('assets/js/main.js')}}"></script>
 
 
 @yield('script')

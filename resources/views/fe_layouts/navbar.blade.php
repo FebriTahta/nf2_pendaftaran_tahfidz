@@ -34,13 +34,13 @@
 
     <!-- Plugins CSS (All Plugins Files) -->
 
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nice-select.css" />
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/swiper-bundle.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/nice-select.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/magnific-popup.css')}}" />
 
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
 
 </head>
 
@@ -71,7 +71,7 @@
                     <div class="col-span-12">
                         <div class="flex flex-wrap items-center justify-between">
                             <a href="/" class="block">
-                                <img class="w-full h-full" src="assets/images/logo/nf2.png" style="max-width: 120px" loading="lazy" width="99" height="46" alt="brand logo">
+                                <img class="w-full h-full" src="{{asset('assets/images/logo/nf2.png')}}" style="max-width: 120px" loading="lazy" width="99" height="46" alt="brand logo">
                             </a>
                             <nav class="flex flex-wrap items-center">
                                 <ul class="hidden lg:flex flex-wrap items-center font-recoleta text-[16px] xl:text-[18px] leading-none text-black">
