@@ -39,28 +39,17 @@
                         </div>
 
                         <div class="grid grid-cols-12 gap-x-[30px]">
-                            <div class="mb-[45px] col-span-6 md:col-span-12">
-                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="property-title"> NIK</label>
-                                <input id="property-title" name="santri_nisn"
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                <input id="Propertyinfo1" name="NIK"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                    type="number" placeholder="NIK">
+                                    type="text" placeholder="NIK..." >
                             </div>
-                            <div class="mb-[45px] col-span-6 md:col-span-12">
-                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="property-title"> NISN</label>
-                                <input id="property-title" name="santri_nik"
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                <input id="Propertyinfo1" name="NISN"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                    type="number" placeholder="NISN">
+                                    type="text" placeholder="NISN..." >
                             </div>
                         </div>
-
-                        {{-- <div class="grid grid-cols-12 gap-x-[30px]">
-                            <div class="col-span-12">
-                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="Propertyinfo1">Biodata Santri</label>
-                            </div>
-                        </div> --}}
 
 
                         <div class="grid grid-cols-12 gap-x-[30px]">
