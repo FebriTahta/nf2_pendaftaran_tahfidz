@@ -204,7 +204,7 @@
                                     type="text" placeholder="NIK">
                             </div>
 
-                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                            {{-- <div class="mb-[45px] col-span-12 md:col-span-6">
                                 <input
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                     type="number" placeholder="No Telp Ayah (Whatsapp / Aktif) ...">
@@ -214,6 +214,52 @@
                                 <input
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                     type="number" placeholder="No Telp Bunda (Whatsapp / Aktif) ...">
+                            </div> --}}
+                        </div>
+
+                        <div class="grid grid-cols-12 gap-x-[30px]">
+                            <div class="mb-[45px] col-span-4 md:col-span-4">
+                                <input id="Propertyinfo1" name="tgl"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Tgl Lahir" >
+                            </div>
+                            <div class="mb-[45px] col-span-4 md:col-span-4">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="bln">
+                                        <option value="">Bln Lahir</option>
+                                        <option value="01">Januari</option>
+                                        <option value="02">Februari</option>
+                                        <option value="03">Maret</option>
+                                        <option value="04">April</option>
+                                        <option value="05">Mei</option>
+                                        <option value="06">Juni</option>
+                                        <option value="07">Juli</option>
+                                        <option value="08">Agustus</option>
+                                        <option value="09">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-[45px] col-span-4 md:col-span-4">
+                                <input name="thn"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="Thn Lahir" min="1996" max="{{date('Y')}}">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input name="santri_tempatlahir"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Tempat Lahir">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="santri_gender">
+                                        <option value="">Jenis Kelamin</option>
+                                        <option value="L">Laki - laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
