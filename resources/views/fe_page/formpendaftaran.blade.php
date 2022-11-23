@@ -100,14 +100,14 @@
                         </div>
                         <div class="grid grid-cols-12 gap-x-[30px]">
 
-                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
                                 {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
                                     for="property-title"> Anak Ke ...</label> --}}
                                 <input id="property-title" name="santri_nomoranak"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                     type="number" placeholder="Anak Ke ...">
                             </div>
-                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
                                 {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
                                     for="property-title"> Dari ... Bersaudara</label> --}}
                                 <input id="property-title" name="santri_nomoranak"
