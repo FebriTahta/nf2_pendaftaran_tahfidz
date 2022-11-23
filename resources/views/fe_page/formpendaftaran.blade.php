@@ -189,7 +189,7 @@
                         <div class="grid grid-cols-12 gap-x-[30px]" style="margin-top: 50px">
                             <div class="col-span-12">
                                 <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="Location">DATA WALI SANTRI</label>
+                                    for="Location">DATA WALI SANTRI AYAH</label>
                             </div>
 
                             <div class="mb-[45px] col-span-12 md:col-span-6">
@@ -254,16 +254,155 @@
                             </div>
                             <div class="mb-[45px] col-span-12 md:col-span-6">
                                 <div class="relative">
-                                    <select class="nice-select form-select" name="santri_gender">
-                                        <option value="">Jenis Kelamin</option>
-                                        <option value="L">Laki - laki</option>
-                                        <option value="P">Perempuan</option>
+                                    <select class="nice-select form-select" name="santri_ortu_pendidikan">
+                                        <option value="">Pendidikan </option>
+                                        <option value="L">SMP</option>
+                                        <option value="P">SMA</option>
+                                        <option value="P">D1</option>
+                                        <option value="P">D2</option>
+                                        <option value="P">D3</option>
+                                        <option value="P">D4</option>
+                                        <option value="P">S1</option>
+                                        <option value="P">S2</option>
+                                        <option value="P">S3</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input name="santri_tempatlahir"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Pekerjaan">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="santri_ortu_penghasilan">
+                                        <option value="">Penghasilan </option>
+                                        <option value="L">1-3 JT</option>
+                                        <option value="P">4-6 JT</option>
+                                        <option value="P">7-9 JT</option>
+                                        <option value="P">10 JT Keatas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="No HP">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 gap-x-[30px]" style="margin-top: 50px">
+                            <div class="col-span-12">
+                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="Location">DATA WALI SANTRI IBU</label>
+                            </div>
+
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input id="Location"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Nama Ayah...">
+                            </div>
+
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="NIK">
+                            </div>
+
+                            {{-- <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="No Telp Ayah (Whatsapp / Aktif) ...">
+                            </div>
+
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="No Telp Bunda (Whatsapp / Aktif) ...">
+                            </div> --}}
                         </div>
 
                         <div class="grid grid-cols-12 gap-x-[30px]">
+                            <div class="mb-[45px] col-span-4 md:col-span-4">
+                                <input id="Propertyinfo1" name="tgl"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Tgl Lahir" >
+                            </div>
+                            <div class="mb-[45px] col-span-4 md:col-span-4">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="bln">
+                                        <option value="">Bln Lahir</option>
+                                        <option value="01">Januari</option>
+                                        <option value="02">Februari</option>
+                                        <option value="03">Maret</option>
+                                        <option value="04">April</option>
+                                        <option value="05">Mei</option>
+                                        <option value="06">Juni</option>
+                                        <option value="07">Juli</option>
+                                        <option value="08">Agustus</option>
+                                        <option value="09">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-[45px] col-span-4 md:col-span-4">
+                                <input name="thn"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="Thn Lahir" min="1996" max="{{date('Y')}}">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input name="santri_tempatlahir"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Tempat Lahir">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="santri_ortu_pendidikan">
+                                        <option value="">Pendidikan </option>
+                                        <option value="L">SMP</option>
+                                        <option value="P">SMA</option>
+                                        <option value="P">D1</option>
+                                        <option value="P">D2</option>
+                                        <option value="P">D3</option>
+                                        <option value="P">D4</option>
+                                        <option value="P">S1</option>
+                                        <option value="P">S2</option>
+                                        <option value="P">S3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input name="santri_tempatlahir"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Pekerjaan">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="santri_ortu_penghasilan">
+                                        <option value="">Penghasilan </option>
+                                        <option value="0">Ibu Rumah Tangga</option>
+                                        <option value="L">1-3 JT</option>
+                                        <option value="P">4-6 JT</option>
+                                        <option value="P">7-9 JT</option>
+                                        <option value="P">10 JT Keatas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                                <input
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="No HP">
+                            </div>
+                        </div>
+
+<hr>
+                        <div class="grid grid-cols-12 gap-x-[30px]">
+                            <div class="col-span-12">
+                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="Location">SCAN BERKAS PERSYARATAN</label>
+                            </div>
                             <div class="mb-[45px] col-span-12">
                                 <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary">Upload Dokumen Lampiran Sesuai Syarat Pendaftaran</label>
                                 <div class="form-group" style="margin-bottom: 20px">
