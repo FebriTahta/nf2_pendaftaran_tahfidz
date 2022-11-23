@@ -28,14 +28,6 @@
                 <div class="container">
                     <form id="formsubmit" method="POST"> @csrf
 
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label>Nama Lengkap Santri : </label>
-                                <input type="text" class="form-control" style="border: none" placeholder="....">
-                            </div>
-                        </div>
-
                         <div class="grid grid-cols-12 gap-x-[30px]">
 
                             <div class="mb-[45px] col-span-12 md:col-span-12">
@@ -48,12 +40,12 @@
                         </div>
 
                         <div class="grid grid-cols-12 gap-x-[30px]">
-                            <div class="mb-[45px] col-span-6 md:col-span-4">
+                            <div class="mb-[45px] col-span-12 md:col-span-4">
                                 <input id="Propertyinfo1" name="NIK"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                     type="text" placeholder="NIK..." >
                             </div>
-                            <div class="mb-[45px] col-span-6 md:col-span-4">
+                            <div class="mb-[45px] col-span-12 md:col-span-4">
                                 <input id="Propertyinfo1" name="NISN"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                     type="text" placeholder="NISN..." >
