@@ -400,7 +400,7 @@
 <hr>
                         <div class="grid grid-cols-12 gap-x-[30px]">
                             <div class="col-span-12">
-                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                <label style="margin-top: 50px" class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
                                     for="Location">SCAN BERKAS PERSYARATAN</label>
                             </div>
                             <div class="mb-[45px] col-span-12">
