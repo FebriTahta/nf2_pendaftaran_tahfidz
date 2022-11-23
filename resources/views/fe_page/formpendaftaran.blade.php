@@ -31,19 +31,36 @@
 
                             <div class="mb-[45px] col-span-12 md:col-span-12">
                                 <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="property-title"> Nama Santri</label>
+                                    for="property-title"> DATA SANTRI</label>
                                 <input id="property-title" name="santri_name"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                    type="text" placeholder="Nama lengkap calon santri">
+                                    type="text" placeholder="Nama lengkap santri">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-12 gap-x-[30px]">
+                            <div class="mb-[45px] col-span-6 md:col-span-12">
+                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> NIK</label>
+                                <input id="property-title" name="santri_nisn"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="NIK">
+                            </div>
+                            <div class="mb-[45px] col-span-6 md:col-span-12">
+                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> NISN</label>
+                                <input id="property-title" name="santri_nik"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="NISN">
+                            </div>
+                        </div>
+
+                        {{-- <div class="grid grid-cols-12 gap-x-[30px]">
                             <div class="col-span-12">
                                 <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
                                     for="Propertyinfo1">Biodata Santri</label>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <div class="grid grid-cols-12 gap-x-[30px]">
@@ -84,7 +101,7 @@
                             <div class="mb-[45px] col-span-12 md:col-span-6">
                                 <div class="relative">
                                     <select class="nice-select form-select" name="santri_gender">
-                                        <option value="">Gender</option>
+                                        <option value="">Jenis Kelamin</option>
                                         <option value="L">Laki - laki</option>
                                         <option value="P">Perempuan</option>
                                     </select>
@@ -92,31 +109,108 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-12 gap-x-[30px]">
+
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Anak Ke ...</label> --}}
+                                <input id="property-title" name="santri_nomoranak"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="Anak Ke ...">
+                            </div>
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Dari ... Bersaudara</label> --}}
+                                <input id="property-title" name="santri_nomoranak"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="number" placeholder="Dari ... Bersaudara">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 gap-x-[30px]">
                             <div class="mb-[45px] col-span-12">
-                                <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="textarea">Alamat Lengkap</label>
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="textarea">Alamat Lengkap</label> --}}
                                     <textarea
                                     class="h-[196px] xl:h-[360px] font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] resize-none"
                                     name="textarea" id="textarea" cols="30" rows="10" placeholder="Tulis alamat lengkap calon santri ..."></textarea>
                             </div>
                         </div>
+                        <div class="grid grid-cols-12 gap-x-[30px]">
 
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Tinggi Badan</label> --}}
+                                <input id="property-title" name="santri_tinggi"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Tinggi Badan ... cm">
+                            </div>
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Berat Badan</label> --}}
+                                <input id="property-title" name="santri_berat"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Berat Badan ... kg">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-12 gap-x-[30px]">
+
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Riwayat Penyakit</label> --}}
+                                <input id="property-title" name="santri_riwayatsakit"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Riwayat Penyakit ...">
+                            </div>
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Riwayat Opname</label> --}}
+                                <input id="property-title" name="santri_riwayatopname"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Riwayat Opname ...">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-12">
+                                <div class="relative">
+                                    <select class="nice-select form-select" name="santri_statuskeluarga">
+                                        <option value="">Status Di Keluarga</option>
+                                        <option value="K">Kandung</option>
+                                        <option value="A">Angkat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-12">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Asal Sekolah</label> --}}
+                                <input id="property-title" name="santri_asalsekolah"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Asal Sekolah : SD/MI ...">
+                            </div>
+                            <div class="mb-[45px] col-span-12 md:col-span-12">
+                                {{-- <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
+                                    for="property-title"> Alamat Asal Sekolah</label> --}}
+                                <input id="property-title" name="santri_asalsekolah"
+                                    class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                    type="text" placeholder="Asal Sekolah ...">
+                            </div>
+                        </div>
+
+                        {{-- Ortu --}}
                         <div class="grid grid-cols-12 gap-x-[30px]">
                             <div class="col-span-12">
                                 <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
-                                    for="Location">Nama Orang Tua / Wali Santri</label>
+                                    for="Location">DATA WALI SANTRI</label>
                             </div>
 
-                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
                                 <input id="Location"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                     type="text" placeholder="Nama Ayah...">
                             </div>
 
-                            <div class="mb-[45px] col-span-12 md:col-span-6">
+                            <div class="mb-[45px] col-span-6 md:col-span-6">
                                 <input
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                    type="text" placeholder="Nama Bunda...">
+                                    type="text" placeholder="NIK">
                             </div>
 
                             <div class="mb-[45px] col-span-12 md:col-span-6">
