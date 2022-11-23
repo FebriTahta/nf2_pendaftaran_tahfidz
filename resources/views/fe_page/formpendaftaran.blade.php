@@ -185,7 +185,8 @@
                         </div>
 
                         {{-- Ortu --}}
-                        <div class="grid grid-cols-12 gap-x-[30px]">
+                        <hr>
+                        <div class="grid grid-cols-12 gap-x-[30px]" style="margin-top: 50px">
                             <div class="col-span-12">
                                 <label class="mb-[20px] font-recoleta text-[18px] leading-none block text-primary"
                                     for="Location">DATA WALI SANTRI</label>
