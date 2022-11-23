@@ -21,7 +21,7 @@
 
     <div class="content">
         <div class="top">
-            <img src="{{asset('1.jpg')}}" alt="">
+            <img src="{{asset('1a.jpg')}}" alt="">
         </div>
         <div class="midle">
             <img src="{{asset('2.jpg')}}" alt="">

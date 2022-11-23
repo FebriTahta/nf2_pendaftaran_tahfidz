@@ -184,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="bg-[#f5f9f8] px-[20px] lg:px-[15px] xl:px-[35px] py-[50px] rounded-[8px] mb-[40px]" style="margin-top: 100px">
+            {{-- <div class="bg-[#f5f9f8] px-[20px] lg:px-[15px] xl:px-[35px] py-[50px] rounded-[8px] mb-[40px]" style="margin-top: 100px">
                 <h3 class="text-primary leading-none text-[24px] font-recoleta underline mb-[30px]">INFORMASI
                     PENDAFTARAN<span class="text-secondary">.</span></h3>
                 <ul class="flex flex-wrap my-[-7px] mx-[-5px] font-light text-[12px]">
@@ -231,7 +231,7 @@
                             & Kontak</a>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </section>
 @endsection
