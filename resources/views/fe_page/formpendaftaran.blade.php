@@ -27,6 +27,15 @@
             <div class="pt-[50px] lg:pt-[50px] add-properties-form-select">
                 <div class="container">
                     <form id="formsubmit" method="POST"> @csrf
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Nama Lengkap Santri : </label>
+                                <input type="text" class="form-control" style="border: none">
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-12 gap-x-[30px]">
 
                             <div class="mb-[45px] col-span-12 md:col-span-12">
