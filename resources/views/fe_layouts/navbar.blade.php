@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta property="og:title" content="Pendaftaran Santri Tahfidz Nurul Falah 2" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{asset('thumbnail.png')}}" />
+    <meta property="og:image" content="{{asset('x.jpg')}}" />
     <meta property="og:description" content="Telah dibuka pendaftaran santri tahfidz Nurul Falah 2 Periode 2023 - 2024" />
     <meta property="og:url" content="http://nf2.nurulfalah.org" />
     <meta name="theme-color" content="#5FA570">
