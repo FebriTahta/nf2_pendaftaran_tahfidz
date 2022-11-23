@@ -300,7 +300,7 @@
                             <div class="mb-[45px] col-span-12 md:col-span-6">
                                 <input id="Location"
                                     class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                    type="text" placeholder="Nama Ayah...">
+                                    type="text" placeholder="Nama Ibu...">
                             </div>
 
                             <div class="mb-[45px] col-span-12 md:col-span-6">
