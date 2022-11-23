@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Nama Lengkap Santri : </label>
-                                <input type="text" class="form-control" style="border: none">
+                                <input type="text" class="form-control" style="border: none" placeholder="....">
                             </div>
                         </div>
 
