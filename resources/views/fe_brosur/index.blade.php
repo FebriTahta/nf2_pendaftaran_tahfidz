@@ -27,7 +27,10 @@
             <img src="{{asset('2.jpg')}}" alt="">
         </div>
         <div class="bottom">
-            <img src="{{asset('3.jpg')}}" alt="">
+            <img src="{{asset('3a.jpg')}}" alt="">
+        </div>
+         <div class="bottom">
+            <img src="{{asset('4.jpg')}}" alt="">
         </div>
     </div>
 
