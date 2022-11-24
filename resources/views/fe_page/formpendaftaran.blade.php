@@ -422,7 +422,7 @@
                                     <input type="file" class="form-control">
                                 </div>
                                 <div class="form-group"  style="margin-bottom: 20px">
-                                    <label class="text-primary">5. Pas Photo 3x4 <i>background biru</i> </label><br>
+                                    <label class="text-primary">5. Foto Full Body (<i> Seluruh Badan </i>) </label><br>
                                     <input type="file" class="form-control">
                                 </div>
                                 <div class="form-group"  style="margin-bottom: 20px">
@@ -442,7 +442,7 @@
                                     <input type="file" class="form-control">
                                 </div>
                                 <div class="form-group"  style="margin-bottom: 20px">
-                                    <label class="text-primary">10. Scan bukti transfer pembayaran formulir ( <i>mengisi surat pernyataan tinggal di pesantren selama 6 tahun</i> ) </label><br>
+                                    <label class="text-primary">10. Scan bukti transfer pembayaran formulir </label><br>
                                     <input type="file" class="form-control">
                                 </div>
                             </div>
