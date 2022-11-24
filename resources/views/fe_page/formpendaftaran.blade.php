@@ -430,7 +430,7 @@
                                     <input type="file" class="form-control">
                                 </div>
                                 <div class="form-group"  style="margin-bottom: 20px">
-                                    <label class="text-primary">7. Surat Keterangan baik di sekolah </label><br>
+                                    <label class="text-primary">7. Surat Keterangan baik dari sekolah </label><br>
                                     <input type="file" class="form-control">
                                 </div>
                                 <div class="form-group"  style="margin-bottom: 20px">
