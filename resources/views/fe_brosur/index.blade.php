@@ -6,36 +6,39 @@
             margin: auto;
             max-width: 600px;
         }
+
         .top {
             margin-top: 50px;
         }
+
         .midle {
             margin-top: 50px;
         }
+
         .bottom {
             margin-top: 50px;
             margin-bottom: 50px;
         }
     </style>
-    
+
 
     <div class="content">
         <div class="top">
-            <img src="{{asset('1a.jpg')}}" alt="">
+            <img src="{{ asset('1a.jpg') }}" alt="">
         </div>
         <div class="midle">
-            <img src="{{asset('2.jpg')}}" alt="">
+            <img src="{{ asset('2.jpg') }}" alt="">
         </div>
         <div class="bottom">
-            <img src="{{asset('3a.jpg')}}" alt="">
-            <img src="{{asset('4.jpg')}}" alt="">
+            <img src="{{ asset('3a.jpg') }}" alt="">
+            <img src="{{ asset('4.jpg') }}" alt="">
         </div>
     </div>
 
     <section class="service-section">
 
         <div class="container">
-           
+
             <div class="grid grid-cols-1 formpendaftaran">
                 <div class="col-span">
                     <div
@@ -73,4 +76,19 @@
 
         </div>
     </section>
+@endsection
+
+@section('script')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+    <script>
+        $(document).ready(function() {
+            $("img").on("contextmenu", function() {
+                return false;
+            });
+        });
+    </script>
 @endsection
