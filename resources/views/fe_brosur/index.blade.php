@@ -28,8 +28,6 @@
         </div>
         <div class="bottom">
             <img src="{{asset('3a.jpg')}}" alt="">
-        </div>
-         <div>
             <img src="{{asset('4.jpg')}}" alt="">
         </div>
     </div>
