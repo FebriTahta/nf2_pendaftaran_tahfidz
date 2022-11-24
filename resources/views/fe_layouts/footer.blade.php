@@ -3,7 +3,7 @@
     <div class="container">
         <div class="grid grid-cols-12 gap-x-[30px] mb-[-30px]">
             <div class="col-span-12 sm:col-span-6 lg:col-span-4 mb-[30px]">
-                <a href="index.html" class="block mb-[25px]">
+                <a href="/" class="block mb-[25px]">
                     <img src="{{asset('assets/images/logo/nf23.png')}}" width="99" height="46" loading=lazy alt="footer logo">
                 </a>
                 <p class="mb-[5px] xl:mb-[40px] max-w-[270px]">Pondok Pesantren Al Quran Nurul Falah 2 Pandaan Pasuruan Jawa Timur </p>

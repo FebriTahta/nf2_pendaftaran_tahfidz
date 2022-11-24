@@ -15,6 +15,9 @@
                             Pastikan anda sudah membaca alur & syarat pendaftaran sebelum mengisi form pendaftaran berikut
                             ini
                         </p>
+                        <a href="/" type="button" style="margin-top: 50px; min-width: 200px; text-align: center" class="before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white sm:block text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">
+                           Lihat Brosur Pendaftaran
+                        </a>
                     </div>
                 </div>
             </div>
