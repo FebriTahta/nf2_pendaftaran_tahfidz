@@ -10,13 +10,25 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 <!-- VENDOR CSS -->
-<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/vendor/toastr/toastr.min.css">
-<link rel="stylesheet" href="assets/vendor/charts-c3/plugin.css"/>
+<link rel="stylesheet" href="{{asset('assets_be/vendor/bootstrap/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets_be/vendor/font-awesome/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets_be/vendor/toastr/toastr.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets_be/vendor/charts-c3/plugin.css')}}"/>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
+{{-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
+      integrity="sha512-1k7mWiTNoyx2XtmI96o+hdjP8nn0f3Z2N4oF/9ZZRgijyV4omsKOXEnqL1gKQNPy2MTSP9rIEWGcH/CInulptA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> --}}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
+    
 <!-- MAIN Project CSS file -->
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="{{asset('assets_be/css/main.css')}}">
 </head>
 <body data-theme="light" class="font-nunito">
 <div id="wrapper" class="theme-cyan">
@@ -24,7 +36,7 @@
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img src="assets/images/logo-icon.svg" width="48" height="48" alt="Iconic"></div>
+            <div class="m-t-30"><img src="{{asset('assets_be/images/logo-icon.svg')}}" width="48" height="48" alt="Iconic"></div>
             <p>Please wait...</p>
         </div>
     </div>
@@ -35,18 +47,13 @@
             <div class="navbar-brand">
                 <button type="button" class="btn-toggle-offcanvas"><i class="fa fa-bars"></i></button>
                 <button type="button" class="btn-toggle-fullwidth"><i class="fa fa-bars"></i></button>
-                <a href="index.html">NF 2 PANDAAN</a>                
+                <a href="#">NF 2 PANDAAN</a>                
             </div>
             
-            <div class="navbar-right">
-                <form id="navbar-search" class="navbar-form search-form">
-                    <input value="" class="form-control" placeholder="Search here..." type="text">
-                    <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
-                </form>                
-
+            {{-- <div class="navbar-right" >
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav">
-                        <li class="dropdown">
+                        <li class="dropdown" >
                             <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                                 <i class="fa fa-bell"></i>
                                 <span class="notification-dot"></span>
@@ -108,11 +115,8 @@
                                 <li class="footer"><a href="javascript:void(0);" class="more">See all notifications</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="page-login.html" class="icon-menu"><i class="fa fa-power-off"></i></a>
-                        </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </nav>

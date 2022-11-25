@@ -2,16 +2,18 @@
     <button type="button" class="btn-toggle-offcanvas"><i class="fa fa-arrow-left"></i></button>
     <div class="sidebar-scroll">
         <div class="user-account">
-            <img src="assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
+            <img src="{{ asset('assets_be/images/user.png') }}" class="rounded-circle user-photo"
+                alt="User Profile Picture">
             <div class="dropdown">
                 <span>Welcome,</span>
-                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Pamela Petrus</strong></a>
+                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Pamela
+                        Petrus</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account">
                     <li><a href="page-profile2.html"><i class="icon-user"></i>My Profile</a></li>
                     <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
                     <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
                     <li class="divider"></li>
-                    <li><a href="page-login.html"><i class="icon-power"></i>Logout</a></li>
+                    <li><a href="#asdasd"><i class="icon-power"></i>Logout</a></li>
                 </ul>
             </div>
             <hr>
@@ -20,7 +22,7 @@
                     <h6>Nurul Falah 2</h6>
                     <small>Dsn. Kalitengah, RT.3/RW.4, Karang Jati, Kec. Pandaan, Pasuruan, Jawa Timur 67156</small>
                 </li>
-               
+
             </ul>
         </div>
         <!-- Nav tabs -->
@@ -30,35 +32,38 @@
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#question"><i class="icon-question"></i></a></li>                 --}}
         </ul>
-            
+
         <!-- Tab panes -->
         <div class="tab-content padding-0">
             <div class="tab-pane active" id="menu">
                 <nav id="left-sidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu li_animation_delay">
                         <li class="active">
-                            <a href="#Dashboard" class="has-arrow"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                            <a href="#Dashboard" class="has-arrow"><i
+                                    class="fa fa-dashboard"></i><span>Dashboard</span></a>
                             <ul>
-                                <li class="active"><a href="index.html">Statistik & Laporan</a></li>
+                                <li class="active"><a href="#">Statistik & Laporan</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#App" class="has-arrow"><i class="fa fa-th-large"></i><span>Data Master</span></a>
+                            <a href="#App" class="has-arrow"><i class="fa fa-th-large"></i><span>Data
+                                    Master</span></a>
                             <ul>
                                 <li><a href="/be-program">Program</a></li>
-                                <li><a href="app-chat.html">Profile</a></li>
-                                <li><a href="app-calendar.html">Syarat PSB</a></li>                                    
+                                <li><a href="/be-santri-baru">Santri Baru <span class="badge badge-info float-right">1
+                                            new</span></a></li>
+                                <li><a href="/be-santri-semua">Seluruh Santri</a></li>
                             </ul>
                         </li>
-                        
-                        <li>
+
+                        {{-- <li>
                             <a href="#Tables" class="has-arrow"><i class="fa fa-table"></i><span>Data Santri</span></a>
                             <ul>
                                 <li><a href="table-basic.html">Santri PSB<span class="badge badge-info float-right">New</span></a> </li>
                                 <li><a href="table-normal.html">Santri Keseluruhan</a> </li>
                             </ul>
-                        </li>
-                        
+                        </li> --}}
+
                     </ul>
                 </nav>
             </div>
@@ -74,67 +79,92 @@
                 <ul class="right_chat list-unstyled li_animation_delay">
                     <li>
                         <a href="javascript:void(0);" class="media">
-                            <img class="media-object" src="assets/images/xs/avatar1.jpg" alt="">
+                            <img class="media-object" src="{{ asset('assets_be/images/xs/avatar1.jpg') }}"
+                                alt="">
                             <div class="media-body">
-                                <span class="name d-flex justify-content-between">Chris Fox <i class="fa fa-heart-o font-12"></i></span>
+                                <span class="name d-flex justify-content-between">Chris Fox <i
+                                        class="fa fa-heart-o font-12"></i></span>
                                 <span class="message">chrisfox@gmail.com</span>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="media">
-                            <img class="media-object" src="assets/images/xs/avatar2.jpg" alt="">
+                            <img class="media-object" src="{{ asset('assets_be/images/xs/avatar2.jpg') }}"
+                                alt="">
                             <div class="media-body">
-                                <span class="name d-flex justify-content-between">Joge Lucky <i class="fa fa-heart-o font-12"></i></span>
+                                <span class="name d-flex justify-content-between">Joge Lucky <i
+                                        class="fa fa-heart-o font-12"></i></span>
                                 <span class="message">Jogelucky@gmail.com</span>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="media">
-                            <img class="media-object" src="assets/images/xs/avatar3.jpg" alt="">
+                            <img class="media-object" src="{{ asset('assets_be/images/xs/avatar3.jpg') }}"
+                                alt="">
                             <div class="media-body">
-                                <span class="name d-flex justify-content-between">Isabella <i class="fa fa-heart-o font-12"></i></span>
+                                <span class="name d-flex justify-content-between">Isabella <i
+                                        class="fa fa-heart-o font-12"></i></span>
                                 <span class="message">Isabella@gmail.com</span>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="media">
-                            <img class="media-object" src="assets/images/xs/avatar4.jpg" alt="">
+                            <img class="media-object" src="{{ asset('assets_be/images/xs/avatar4.jpg') }}"
+                                alt="">
                             <div class="media-body">
-                                <span class="name d-flex justify-content-between">Folisise Chosielie <i class="fa fa-heart font-12"></i></span>
+                                <span class="name d-flex justify-content-between">Folisise Chosielie <i
+                                        class="fa fa-heart font-12"></i></span>
                                 <span class="message">FolisiseChosielie@gmail.com</span>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="media">
-                            <img class="media-object" src="assets/images/xs/avatar5.jpg" alt="">
+                            <img class="media-object" src="{{ asset('assets_be/images/xs/avatar5.jpg') }}"
+                                alt="">
                             <div class="media-body">
-                                <span class="name d-flex justify-content-between">Alexander <i class="fa fa-heart-o font-12"></i></span>
+                                <span class="name d-flex justify-content-between">Alexander <i
+                                        class="fa fa-heart-o font-12"></i></span>
                                 <span class="message">Alexander@gmail.com</span>
                             </div>
-                        </a>                            
-                    </li>                        
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="tab-pane" id="setting">
                 <h6>Choose Skin</h6>
                 <ul class="choose-skin list-unstyled">
-                    <li data-theme="purple"><div class="purple"></div></li>
-                    <li data-theme="blue"><div class="blue"></div></li>
-                    <li data-theme="cyan" class="active"><div class="cyan"></div></li>
-                    <li data-theme="green"><div class="green"></div></li>
-                    <li data-theme="orange"><div class="orange"></div></li>
-                    <li data-theme="blush"><div class="blush"></div></li>
-                    <li data-theme="red"><div class="red"></div></li>
+                    <li data-theme="purple">
+                        <div class="purple"></div>
+                    </li>
+                    <li data-theme="blue">
+                        <div class="blue"></div>
+                    </li>
+                    <li data-theme="cyan" class="active">
+                        <div class="cyan"></div>
+                    </li>
+                    <li data-theme="green">
+                        <div class="green"></div>
+                    </li>
+                    <li data-theme="orange">
+                        <div class="orange"></div>
+                    </li>
+                    <li data-theme="blush">
+                        <div class="blush"></div>
+                    </li>
+                    <li data-theme="red">
+                        <div class="red"></div>
+                    </li>
                 </ul>
 
                 <ul class="list-unstyled font_setting mt-3">
                     <li>
                         <label class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" name="font" value="font-nunito" checked="">
+                            <input type="radio" class="custom-control-input" name="font" value="font-nunito"
+                                checked="">
                             <span class="custom-control-label">Nunito Google Font</span>
                         </label>
                     </li>
@@ -180,7 +210,7 @@
                         </label>
                         <span class="ml-3">Enable High Contrast Mode!</span>
                     </li>
-                </ul>                    
+                </ul>
 
                 <hr>
                 <h6>General Settings</h6>
@@ -189,7 +219,7 @@
                         <label class="fancy-checkbox">
                             <input type="checkbox" name="checkbox" checked>
                             <span>Allowed Notifications</span>
-                        </label>                      
+                        </label>
                     </li>
                     <li>
                         <label class="fancy-checkbox">
@@ -206,7 +236,8 @@
                 </ul>
 
                 <a href="#" target="_blank" class="btn btn-block btn-primary">Buy this item</a>
-                <a href="https://themeforest.net/user/wrraptheme/portfolio" target="_blank" class="btn btn-block btn-secondary">View portfolio</a>
+                <a href="https://themeforest.net/user/wrraptheme/portfolio" target="_blank"
+                    class="btn btn-block btn-secondary">View portfolio</a>
             </div>
             <div class="tab-pane" id="question">
                 <form>
@@ -228,26 +259,33 @@
                     <li><a href="javascript:void(0);">Privacy &amp; Policy</a></li>
                     <li class="menu-heading">BILLING</li>
                     <li><a href="javascript:void(0);">Payment info</a></li>
-                    <li><a href="javascript:void(0);">Auto-Renewal</a></li>                        
+                    <li><a href="javascript:void(0);">Auto-Renewal</a></li>
                     <li class="menu-button mt-3">
                         <a href="../docs/index.html" class="btn btn-primary btn-block">Documentation</a>
                     </li>
                 </ul>
-            </div>    
-        </div>          
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- rightbar icon div -->
 <div class="right_icon_bar">
     <ul>
-        <li><a href="app-inbox.html"><i class="fa fa-envelope"></i></a></li>
-        <li><a href="app-chat.html"><i class="fa fa-comments"></i></a></li>
-        <li><a href="app-calendar.html"><i class="fa fa-calendar"></i></a></li>
-        <li><a href="file-dashboard.html"><i class="fa fa-folder"></i></a></li>
-        <li><a href="app-contact.html"><i class="fa fa-id-card"></i></a></li>
-        <li><a href="blog-list.html"><i class="fa fa-globe"></i></a></li>
+        <li><a href="/be-santri-semua"><i class="fa fa-id-card"></i></a></li>
+        <li><a href="/"><i class="fa fa-globe"></i></a></li>
+        <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                <i class="fa fa-power-off"></i>
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        </li>
         <li><a href="javascript:void(0);"><i class="fa fa-plus"></i></a></li>
-        <li><a href="javascript:void(0);" class="right_icon_btn"><i class="fa fa-angle-right"></i></a></li>
+        
     </ul>
 </div>

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'slug_program', 'program_name'
+    ];
 }

@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 use Validator;
-use Illuminate\Support\Str;
-use App\Models\Program;
 use App\Models\Santri;
+use App\Models\Ayah;
+use App\Models\Ibu;
 use App\Models\Dokumentahfidz;
+use App\Models\Dokumen;
+use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class FormPendaftaran extends Controller
+class SantriController extends Controller
 {
-    public function form_pendaftaran_tahfidz(Request $request)
-    {
-        $program = Program::where('program_name', 'Tahfidz')->first();
-        return view('fe_page.formpendaftaran',compact('program'));
+    public function index_santri_baru(Request $request) {
+        return view('be_page.santri_baru');
     }
 
-    public function submit_form_tahfidz(Request $request)
+    public function post_santri(Request $request)
     {
         $validator = Validator([
             //Santri
@@ -76,7 +75,6 @@ class FormPendaftaran extends Controller
                     ],
                     [
                         'program_id' => $request->program_id,
-                        'santri_slug' => Str::slug($request->santri_name),
                         'santri_name' => $request->santri_name,
                         'santri_nik' => $request->santri_nik,
                         'santri_nisn' => $request->santri_nisn,
@@ -153,21 +151,8 @@ class FormPendaftaran extends Controller
                 );
 
                 // CREATE DOKUMEN
-                // SIMPAN FILE DOKUMEN DI FOLDER PUBLIC
-                if($request->hasFile('dokumen_rapot')) {
-                    $filename1    = 'rapot_'.time().'.'.$request->dokumen_rapot->getClientOriginalExtension();
-                    $request->file('dokumen_rapot')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename1);
-                }
-
-                if($request->hasFile('dokumen_kk')) {
-                    $filename2    = 'kk_'.time().'.'.$request->dokumen_kk->getClientOriginalExtension();
-                    $request->file('dokumen_kk')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename1);
-                }
-
-                if($request->hasFile('dokumen_kk')) {
-                    $filename2    = 'kk_'.time().'.'.$request->dokumen_kk->getClientOriginalExtension();
-                    $request->file('dokumen_kk')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename1);
-                }
+               
+                
 
                 $dokumen = DB::table('dokumens')
                 ->updateOrCreate(
@@ -208,7 +193,7 @@ class FormPendaftaran extends Controller
                 return response()->json(
                     [
                         'status'  => 400,
-                        'message' => ['Pastikan anda mengisi seluruh data santri dan dokumen persyaratan'],
+                        'message' => ['Kesalahan input. Mohon periksa kembali inputan anda'],
                     ]
                 );
             }

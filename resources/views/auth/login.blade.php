@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -70,4 +70,70 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>:: NF2 :: Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Iconic Bootstrap 4.5.0 Admin Template">
+<meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="assets_be/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets_be/vendor/font-awesome/css/font-awesome.min.css">
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="assets_be/css/main.css">
+
+</head>
+
+<body data-theme="light" class="font-nunito">
+	<!-- WRAPPER -->
+	<div id="wrapper" class="theme-cyan">
+		<div class="vertical-align-wrap">
+			<div class="vertical-align-middle auth-main">
+				<div class="auth-box">
+                    {{-- <div class="top">
+                        <img src="assets_be/images/logo-white.svg" alt="Iconic">
+                    </div> --}}
+					<div class="card">
+                        <div class="header">
+                            @if ($message = Session::get('error'))
+                            <div class="alert alert-danger alert-block">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                            @endif
+
+                            
+                        </div>
+                        <div class="header">
+                            <p class="lead">Login to your account</p>
+                        </div>
+                        <div class="body">
+                            <form class="form-auth-small" method="POST" action="{{route('login')}}">@csrf
+                                <div class="form-group">
+                                    <label for="signin-email" class="control-label sr-only">Username</label>
+                                    <input type="text" class="form-control" name="username" id="signin-email" value="" placeholder="username...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="signin-password" class="control-label sr-only">Password</label>
+                                    <input type="password" class="form-control" name="password" id="signin-password" value="" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END WRAPPER -->
+</body>
+</html>
+

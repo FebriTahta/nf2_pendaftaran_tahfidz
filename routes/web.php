@@ -5,6 +5,8 @@ use App\Http\Controllers\ProgramCont;
 use App\Http\Controllers\FormPendaftaran;
 use App\Http\Controllers\PageCont;
 use App\Http\Controllers\BrosurController;
+use App\Http\Controllers\SantriController;
+use App\Http\Middleware\CheckRole;
 
 
 /*
@@ -17,17 +19,29 @@ use App\Http\Controllers\BrosurController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // BE
-Route::get('/be-program',[ProgramCont::class,'index_program'])->name('be.program');
-
+Route::group(['middleware' => ['auth', 'CheckRole:admin,super_admin']], function(){
+    Route::controller(ProgramCont::class)->group(function(){
+        Route::get('/be-program', 'index_program');
+        Route::post('/be-program-post','post_program');
+        Route::post('/be-program-delete','delete_program');
+    });
+    Route::controller(SantriController::class)->group(function(){
+        Route::get('/be-santri-baru','index_santri_baru');
+        Route::get('/be-santri-semua','index_santri_semua');
+    });
+});
 
 
 // FE
 Route::controller(BrosurController::class)->group(function(){
     Route::get('/', 'index');
 });
+
+
 
 Route::controller(PageCont::class)->group(function () {
     Route::get('/visi-misi', 'visimisi');
@@ -48,5 +62,4 @@ Route::controller(FormPendaftaran::class)->group(function() {
 });
 
 
-Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

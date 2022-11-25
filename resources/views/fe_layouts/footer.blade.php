@@ -6,8 +6,8 @@
                 <a href="/" class="block mb-[25px]">
                     <img src="{{asset('assets/images/logo/nf23.png')}}" width="99" height="46" loading=lazy alt="footer logo">
                 </a>
-                <p class="mb-[5px] xl:mb-[40px] max-w-[270px]">Pondok Pesantren Al Quran Nurul Falah 2 Pandaan Pasuruan Jawa Timur </p>
-                {{-- <p class="text-sm hidden md:block">&copy; <a href="https://themeforest.net/user/hastech/portfolio" class="text-secondary">HasTech.</a> All Rights Reserved - Privacy Policy</p> --}}
+                <p class="mb-[5px] xl:mb-[40px] max-w-[270px]">Pesantren Al Quran Nurul Falah 2 Pandaan Pasuruan Jawa Timur </p>
+                <p class="text-sm md:block">Admin - klik disini untuk login &copy; <a href="/login" class="text-secondary">Admin Page.</a></p>
             </div>
             {{-- <div class="col-span-12 sm:col-span-6 lg:col-span-3 mb-[30px]">
                 <h3 class="font-recoleta font-normal text-[22px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">Information<span class="text-secondary">.</span></h3>

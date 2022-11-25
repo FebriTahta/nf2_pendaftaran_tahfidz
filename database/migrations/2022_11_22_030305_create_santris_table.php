@@ -15,16 +15,24 @@ class CreateSantrisTable extends Migration
     {
         Schema::create('santris', function (Blueprint $table) {
             $table->id();
-            $table->string('santri_jenis')->nullable();
+            $table->unsignedBigInteger('program_id')->nullable();
+            $table->string('santri_slug');
             $table->string('santri_name');
-            $table->string('santri_gender');
-            $table->longText('santri_alamat');
+            $table->string('santri_nik');
+            $table->string('santri_nisn');
             $table->string('santri_tempatlahir');
             $table->string('santri_tanggallahir');
-            $table->string('santri_namaayah')->nullable();
-            $table->string('santri_namaibu')->nullable();
-            $table->string('santri_telpayah')->nullable();
-            $table->string('santri_telpibu')->nullable();
+            $table->string('santri_gender');
+            $table->string('santri_anaknomor');
+            $table->string('santri_bersaudara')->nullable();
+            $table->longText('santri_alamat');
+            $table->string('santri_tinggibadan');
+            $table->string('santri_beratbadan');
+            $table->string('santri_riwayatsakit')->nullable();
+            $table->string('santri_riwayatopname')->nullable();
+            $table->string('santri_statuskeluarga');
+            $table->string('santri_asalsekolah');
+            $table->string('santri_alamatsekolah')->nullable();
             $table->timestamps();
         });
     }
