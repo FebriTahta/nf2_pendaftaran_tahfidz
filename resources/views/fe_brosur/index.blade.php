@@ -27,7 +27,7 @@
             <img src="{{ asset('1a.jpg') }}" alt="">
         </div>
         <div class="midle">
-            <img src="{{ asset('2.jpg') }}" alt="">
+            <img src="{{ asset('2a.jpg') }}" alt="">
         </div>
         <div class="bottom">
             <img src="{{ asset('3a.jpg') }}" alt="">
