@@ -10,4 +10,9 @@ class BrosurController extends Controller
     {
         return view('fe_brosur.index');
     }
+
+    public function pendaftaran_sukses(Request $request)
+    {
+        return view('fe_brosur.sukses_pendaftaran');
+    }
 }

@@ -45,7 +45,7 @@
                                 <li class="active"><a href="#">Statistik & Laporan</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li>    
                             <a href="#App" class="has-arrow"><i class="fa fa-th-large"></i><span>Data
                                     Master</span></a>
                             <ul>
@@ -55,15 +55,18 @@
                                 <li><a href="/be-santri-semua">Seluruh Santri</a></li>
                             </ul>
                         </li>
-
-                        {{-- <li>
-                            <a href="#Tables" class="has-arrow"><i class="fa fa-table"></i><span>Data Santri</span></a>
+                        <li>
+                            <a href="#App" class="has-arrow"><i class="fa fa-puzzle-piece"></i><span>Tampilan UI</span></a>
                             <ul>
-                                <li><a href="table-basic.html">Santri PSB<span class="badge badge-info float-right">New</span></a> </li>
-                                <li><a href="table-normal.html">Santri Keseluruhan</a> </li>
+                                <li><a href="/be-profile">Profile</a></li>
                             </ul>
-                        </li> --}}
-
+                            <ul>
+                                <li><a href="/be-menu">Menu</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/be-konten">Konten</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>

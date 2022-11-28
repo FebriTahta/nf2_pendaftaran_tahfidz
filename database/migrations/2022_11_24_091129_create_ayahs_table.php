@@ -15,11 +15,11 @@ class CreateAyahsTable extends Migration
     {
         Schema::create('ayahs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('santri_id');
-            $table->string('ayah_name');
-            $table->string('ayah_nik');
-            $table->string('ayah_tgllahir');
-            $table->string('ayah_tempatlahir');
+            $table->unsignedBigInteger('santri_id')->nullable();
+            $table->string('ayah_name')->nullable();
+            $table->string('ayah_nik')->nullable();
+            $table->string('ayah_tgllahir')->nullable();
+            $table->string('ayah_tempatlahir')->nullable();
             $table->string('ayah_pendidikan')->nullable();
             $table->string('ayah_pekerjaan')->nullable();
             $table->string('ayah_penghasilan')->nullable();

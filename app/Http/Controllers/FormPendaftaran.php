@@ -5,6 +5,7 @@ use Validator;
 use Illuminate\Support\Str;
 use App\Models\Program;
 use App\Models\Santri;
+use App\Models\Dokumen;
 use App\Models\Dokumentahfidz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,16 +20,16 @@ class FormPendaftaran extends Controller
 
     public function submit_form_tahfidz(Request $request)
     {
-        $validator = Validator([
-            //Santri
+        $validator = Validator::make($request->all(), [
+            
             'program_id' => 'required',
             'santri_name' => 'required',
             'santri_nik' => 'required',
             'santri_nisn' => 'required',
             'santri_tempatlahir' => 'required',
-            'tgl' => 'required',
-            'bln' => 'required',
-            'thn' => 'required',
+            'tgl_santri' => 'required',
+            'bln_santri' => 'required',
+            'thn_santri' => 'required',
             'santri_gender' => 'required',
             'santri_anaknomor' => 'required',
             'santri_bersaudara' => 'required',
@@ -40,7 +41,7 @@ class FormPendaftaran extends Controller
             'santri_statuskeluarga' => 'required',
             'santri_asalsekolah' => 'required',
             'santri_alamatsekolah' => 'required',
-            //Dokumen
+           
             'dokumen_rapot'=> 'required',
             'dokumen_kk'=> 'required',
             'dokumen_akta'=> 'required',
@@ -48,8 +49,7 @@ class FormPendaftaran extends Controller
             'dokumen_foto'=> 'required',
             'dokumen_vaksin'=> 'required',
             'dokumen_tfformulir'=> 'required',
-            //Untuk data ayah dan ibu tidak perlu di validasi karena tidak wajib 
-            //takutnya tidak pynya salah satu maupun keduanya
+            
         ]);
 
         if ($validator->fails()) {
@@ -58,19 +58,20 @@ class FormPendaftaran extends Controller
                 [
                     'status' =>400,
                     'message'=>$validator->messages(),
-                    'errors' =>$validator->messages(),
                 ]
             );
+           
         }else {
             # code...
+
             DB::beginTransaction();
 
             try {
                 // code...
                 // CREATE SANTRI
-                $tgl_lahir_santri = $request->thn_santri.'-'.$request->bln_santri.'-'.$request->tgl_santri;  
-                $santri  = DB::table('santris')
-                ->updateOrCreate(
+
+            $tgl_lahir_santri = $request->thn_santri.'-'.$request->bln_santri.'-'.$request->tgl_santri;  
+                $santri  = Santri::updateOrCreate(
                     [
                         'id'=> $request->id,
                     ],
@@ -96,64 +97,81 @@ class FormPendaftaran extends Controller
                     ]
                 );
 
-                // CREATE AYAH
-                $tgl_lahir_ayah     = '';
-                if ($request->tgl_ayah !== null && $request->bln_ayah !== null && $request->thn_ayah !== null) {
+                if ($request->ayah_name !== null) {
                     # code...
-                    $tgl_lahir_ayah = $request->thn_ayah.'-'.$request->bln_ayah.'-'.$request->tgl_ayah;
-                }else {
-                    # code...
-                    $tgl_lahir_ayah = '';
-                }
+                    // CREATE AYAH
+                    $tgl_lahir_ayah     = '';
+                    if ($request->tgl_ayah !== null && $request->bln_ayah !== null && $request->thn_ayah !== null) {
+                        # code...
+                        $tgl_lahir_ayah = $request->thn_ayah.'-'.$request->bln_ayah.'-'.$request->tgl_ayah;
+                    }else {
+                        # code...
+                        $tgl_lahir_ayah = '';
+                    }
 
-                $ayah = DB::table('ayahs')
-                ->updateOrCreate(
-                    [
-                        'id' => $request->ayah_id,
-                    ],
-                    [
-                        'ayah_name' => $request->ayah_name,
-                        'ayah_nik' => $request->ayah_nik,
-                        'ayah_tgllahir' => $tgl_lahir_ayah,
-                        'ayah_tempatlahir' => $request->ayah_tempatlahir,
-                        'ayah_pendidikan' => $request->ayah_pendidikan,
-                        'ayah_pekerjaan' => $request->ayah_pekerjaan,
-                        'ayah_penghasilan' => $request->ayah_penghasilan,
-                        'ayah_nohp' => $request->ayah_nohp,
-                        'santri_id' => $santri->id,
-                    ]
-                );
-
-                // CREATE IBU
-                $tgl_lahir_ibu     = '';
-                if ($request->tgl_ibu !== null && $request->bln_ibu !== null && $request->thn_ibu !== null) {
-                    # code...
-                    $tgl_lahir_ibu = $request->thn_ibu.'-'.$request->bln_ibu.'-'.$request->tgl_ibu;
-                }else {
-                    # code...
-                    $tgl_lahir_ibu = '';
+                    $ayah = Ayah::updateOrCreate(
+                        [
+                            'id' => $request->ayah_id,
+                        ],
+                        [
+                            'ayah_name' => $request->ayah_name,
+                            'ayah_nik' => $request->ayah_nik,
+                            'ayah_tgllahir' => $tgl_lahir_ayah,
+                            'ayah_tempatlahir' => $request->ayah_tempatlahir,
+                            'ayah_pendidikan' => $request->ayah_pendidikan,
+                            'ayah_pekerjaan' => $request->ayah_pekerjaan,
+                            'ayah_penghasilan' => $request->ayah_penghasilan,
+                            'ayah_nohp' => $request->ayah_nohp,
+                            'santri_id' => $santri->id,
+                        ]
+                    );
                 }
                 
-                $ibu = DB::table('ibus')
-                ->updateOrCreate(
-                    [
-                        'id' => $request->ibu_id,
-                    ],
-                    [
-                        'ibu_name' => $request->ibu_name,
-                        'ibu_nik' => $request->ibu_nik,
-                        'ibu_tgllahir' => $tgl_lahir_ibu,
-                        'ibu_tempatlahir' => $request->ibu_tempatlahir,
-                        'ibu_pendidikan' => $request->ibu_pendidikan,
-                        'ibu_pekerjaan' => $request->ibu_pekerjaan,
-                        'ibu_penghasilan' => $request->ibu_penghasilan,
-                        'ibu_nohp' => $request->ibu_nohp,
-                        'santri_id' => $santri->id,
-                    ]
-                );
+
+                if ($request->ibu_name !== null) {
+                    # code...
+                    // CREATE IBU
+                    $tgl_lahir_ibu     = '';
+                    if ($request->tgl_ibu !== null && $request->bln_ibu !== null && $request->thn_ibu !== null) {
+                        # code...
+                        $tgl_lahir_ibu = $request->thn_ibu.'-'.$request->bln_ibu.'-'.$request->tgl_ibu;
+                    }else {
+                        # code...
+                        $tgl_lahir_ibu = '';
+                    }
+                    
+                    $ibu = Ibu::updateOrCreate(
+                        [
+                            'id' => $request->ibu_id,
+                        ],
+                        [
+                            'ibu_name' => $request->ibu_name,
+                            'ibu_nik' => $request->ibu_nik,
+                            'ibu_tgllahir' => $tgl_lahir_ibu,
+                            'ibu_tempatlahir' => $request->ibu_tempatlahir,
+                            'ibu_pendidikan' => $request->ibu_pendidikan,
+                            'ibu_pekerjaan' => $request->ibu_pekerjaan,
+                            'ibu_penghasilan' => $request->ibu_penghasilan,
+                            'ibu_nohp' => $request->ibu_nohp,
+                            'santri_id' => $santri->id,
+                        ]
+                    );
+                }
+                
 
                 // CREATE DOKUMEN
                 // SIMPAN FILE DOKUMEN DI FOLDER PUBLIC
+                $filename1 = '';
+                $filename2 = '';
+                $filename3 = '';
+                $filename4 = '';
+                $filename5 = '';
+                $filename6 = '';
+                $filename7 = '';
+                $filename8 = '';
+                $filename9 = '';
+                $filename10 = '';
+                
                 if($request->hasFile('dokumen_rapot')) {
                     $filename1    = 'rapot_'.time().'.'.$request->dokumen_rapot->getClientOriginalExtension();
                     $request->file('dokumen_rapot')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename1);
@@ -161,44 +179,79 @@ class FormPendaftaran extends Controller
 
                 if($request->hasFile('dokumen_kk')) {
                     $filename2    = 'kk_'.time().'.'.$request->dokumen_kk->getClientOriginalExtension();
-                    $request->file('dokumen_kk')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename1);
+                    $request->file('dokumen_kk')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename2);
                 }
 
-                if($request->hasFile('dokumen_kk')) {
-                    $filename2    = 'kk_'.time().'.'.$request->dokumen_kk->getClientOriginalExtension();
-                    $request->file('dokumen_kk')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename1);
+                if($request->hasFile('dokumen_akta')) {
+                    $filename3    = 'akta_'.time().'.'.$request->dokumen_akta->getClientOriginalExtension();
+                    $request->file('dokumen_akta')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename3);
                 }
 
-                $dokumen = DB::table('dokumens')
-                ->updateOrCreate(
+                if($request->hasFile('dokumen_ktp')) {
+                    $filename4    = 'ktp_'.time().'.'.$request->dokumen_ktp->getClientOriginalExtension();
+                    $request->file('dokumen_ktp')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename4);
+                }
+
+                if($request->hasFile('dokumen_foto')) {
+                    $filename5    = 'foto_'.time().'.'.$request->dokumen_foto->getClientOriginalExtension();
+                    $request->file('dokumen_foto')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename5);
+                }
+
+                if($request->hasFile('dokumen_suratsehat')) {
+                    $filename6    = 'suratsehat_'.time().'.'.$request->dokumen_suratsehat->getClientOriginalExtension();
+                    $request->file('dokumen_suratsehat')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename6);
+                }
+
+                if($request->hasFile('dokumen_suratbaik')) {
+                    $filename7    = 'suratbaik_'.time().'.'.$request->dokumen_suratbaik->getClientOriginalExtension();
+                    $request->file('dokumen_suratbaik')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename7);
+                }
+
+                if($request->hasFile('dokumen_vaksin')) {
+                    $filename8    = 'vaksin_'.time().'.'.$request->dokumen_vaksin->getClientOriginalExtension();
+                    $request->file('dokumen_vaksin')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename8);
+                }
+
+                if($request->hasFile('dokumen_prestasi')) {
+                    $filename9    = 'prestasi_'.time().'.'.$request->dokumen_prestasi->getClientOriginalExtension();
+                    $request->file('dokumen_prestasi')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename9);
+                }
+
+                if($request->hasFile('dokumen_tfformulir')) {
+                    $filename10    = 'tfformulir_'.time().'.'.$request->dokumen_tfformulir->getClientOriginalExtension();
+                    $request->file('dokumen_tfformulir')->move('dokumen_santri/'.$santri->id.'_'.$santri->slug,$filename10);
+                }
+
+                $dokumen = Dokumen::updateOrCreate(
                     [
                         'id' => $request->dokumen_id,
                     ],
                     [
                         'program_id' => $request->program_id,
                         'santri_id' => $santri->id,
-                        'dokumen_rapot' => $request->dokumen_rapot,
-                        'dokumen_kk' => $request->dokumen_kk,
-                        'dokumen_akta' => $request->dokumen_akta,
-                        'dokumen_ktp' => $request->dokumen_ktp,
-                        'dokumen_foto' => $request->dokumen_foto,
-                        'dokumen_suratsehat' => $request->dokumen_suratsehat,
-                        'dokumen_suratbaik' => $request->dokumen_suratbaik,
-                        'dokumen_vaksin' => $request->dokumen_vaksin,
-                        'dokumen_prestasi' => $request->dokumen_prestasi,
-                        'dokumen_tfformulir' => $request->dokumen_tfformulir,
+                        'dokumen_rapot' => $filename1,
+                        'dokumen_kk' => $filename2,
+                        'dokumen_akta' => $filename3,
+                        'dokumen_ktp' => $filename4,
+                        'dokumen_foto' => $filename5,
+                        'dokumen_suratsehat' => $filename6,
+                        'dokumen_suratbaik' => $filename7,
+                        'dokumen_vaksin' => $filename8,
+                        'dokumen_prestasi' => $filename9,
+                        'dokumen_tfformulir' => $filename10,
                     ]
                 );
+                
 
                 // commit semua perintah insert
                 DB::commit();
 
-                return response()->json(
-                    [
-                        'status'  => 200,
-                        'message' => ['Data santri berhasil disimpan'],
-                    ]
-                );
+            return response()->json(
+                [
+                    'status'  => 200,
+                    'message' => ['Data santri berhasil disimpan'],
+                ]
+            );
 
             } catch (\Exception $e) {
                 //throw $e;

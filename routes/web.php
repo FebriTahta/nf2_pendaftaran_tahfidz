@@ -5,7 +5,10 @@ use App\Http\Controllers\ProgramCont;
 use App\Http\Controllers\FormPendaftaran;
 use App\Http\Controllers\PageCont;
 use App\Http\Controllers\BrosurController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SantriController;
+use App\Http\Controllers\ProfileCOntroller;
+use App\Http\Controllers\KontenController;
 use App\Http\Middleware\CheckRole;
 
 
@@ -33,12 +36,29 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin,super_admin']], function
         Route::get('/be-santri-baru','index_santri_baru');
         Route::get('/be-santri-semua','index_santri_semua');
     });
+    Route::controller(MenuController::class)->group(function() {
+        Route::get('/be-menu','index_menu');
+        Route::post('/be-menu-post','post_menu');
+        Route::post('/be-menu-delete','delete_menu');
+        Route::get('/be-menu-total','total');
+    });
+    Route::controller(KontenController::class)->group(function(){
+        Route::get('/be-konten','index_konten');
+        Route::post('/be-konten-post','post_konten');
+        Route::post('/be-konten-delete','delete_konten');
+    });
+    Route::controller(ProfileController::class)->group(function() {
+        Route::get('/be-profile','index_profile');
+        Route::post('/be-profile-post' ,'post_profile');
+        Route::post('/be-profile-delete','delete_profile');
+    });
 });
 
 
 // FE
 Route::controller(BrosurController::class)->group(function(){
     Route::get('/', 'index');
+    Route::get('/pendaftaran-sukses','pendaftaran_sukses');
 });
 
 

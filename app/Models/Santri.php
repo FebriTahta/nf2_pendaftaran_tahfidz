@@ -26,7 +26,8 @@ class Santri extends Model
         'santri_riwayatopname',
         'santri_statuskeluarga',
         'santri_asalsekolah',
-        'santri_alamatsekolah'
+        'santri_alamatsekolah',
+        'santri_slug'
     ];
 
     public function ayah()
