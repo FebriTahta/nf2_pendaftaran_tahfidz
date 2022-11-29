@@ -71,9 +71,9 @@
         }
     }
 
-    @media only screen and (max-width: 70px) {
+    @media only screen and (max-width: 700px) {
         .konten {
-            min-height: 500px !important;
+            max-height: 500px !important;
         }
 
         .foot {
