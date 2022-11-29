@@ -63,13 +63,21 @@
 
     @media only screen and (min-width: 701px) {
         .konten {
-            min-height: 1000px;
+            min-height: 1000px !important;
+        }
+
+        .foot {
+            margin-top: 120px !important;
         }
     }
 
     @media only screen and (max-width: 70px) {
         .konten {
-            min-height: 500px;
+            min-height: 500px !important;
+        }
+
+        .foot {
+            margin-top: 50px !important;
         }
     }
 </style>
@@ -115,7 +123,7 @@
         </div>
     @endif
     
-    <div class="foot" style="margin-top: 120px">
+    <div class="foot" >
         <img src="{{asset('assets/images/logo/nf22.png')}}" style="max-width: 150px" alt="">
         <p style="color: white;">Nurul Falah 2 Pandaan {{date('Y')}}</p>
     </div>
