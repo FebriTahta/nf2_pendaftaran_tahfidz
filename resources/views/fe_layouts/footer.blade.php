@@ -87,7 +87,13 @@
 <!-- Activation JS -->
 <script src="{{asset('assets/js/main.js')}}"></script>
 
-
+<script>
+    $(document).ready(function() {
+        $("img").on("contextmenu", function() {
+            return false;
+        });
+    });
+</script>
 @yield('script')
 </body>
 
