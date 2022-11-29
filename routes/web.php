@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin,super_admin']], function
         Route::get('/be-konten','index_konten');
         Route::post('/be-konten-post','post_konten');
         Route::post('/be-konten-delete','delete_konten');
+        Route::get('/be-menu-total','total');
     });
     Route::controller(ProfileController::class)->group(function() {
         Route::get('/be-profile','index_profile');
@@ -59,21 +60,22 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin,super_admin']], function
 Route::controller(BrosurController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/pendaftaran-sukses','pendaftaran_sukses');
+    Route::get('/{url}','brosur');
 });
 
 
 
 Route::controller(PageCont::class)->group(function () {
-    Route::get('/visi-misi', 'visimisi');
-    Route::get('/jaminan-mutu', 'jaminanmutu');
-    Route::get('/kegiatan-harian', 'kegiatanharian');
-    Route::get('/rincian-dana', 'rinciandana');
-    Route::get('/pendaftaran', 'pendaftaran');
-    Route::get('/syarat-pendaftaran', 'syaratpendaftaran');
-    Route::get('/alur-pendaftaran','alurpendaftaran');
-    Route::get('/tes-seleksi', 'tesseleksi');
-    Route::get('/pendaftaran', 'pendaftaran');
-    Route::get('/sekretariat', 'sekretariat');
+    // Route::get('/visi-misi', 'visimisi');
+    // Route::get('/jaminan-mutu', 'jaminanmutu');
+    // Route::get('/kegiatan-harian', 'kegiatanharian');
+    // Route::get('/rincian-dana', 'rinciandana');
+    // Route::get('/pendaftaran', 'pendaftaran');
+    // Route::get('/syarat-pendaftaran', 'syaratpendaftaran');
+    // Route::get('/alur-pendaftaran','alurpendaftaran');
+    // Route::get('/tes-seleksi', 'tesseleksi');
+    // Route::get('/pendaftaran', 'pendaftaran');
+    // Route::get('/sekretariat', 'sekretariat');
 });
 
 Route::controller(FormPendaftaran::class)->group(function() {

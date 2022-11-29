@@ -6,11 +6,11 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h2>Menu</h2>
+                        <h2>Konten</h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-dashboard"></i></a></li>
-                            <li class="breadcrumb-item">Menu</li>
-                            <li class="breadcrumb-item active">Manajemen Menu</li>
+                            <li class="breadcrumb-item">Konten</li>
+                            <li class="breadcrumb-item active">Manajemen Konten</li>
                         </ul>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card number-chart">
                         <div class="body">
-                            <span class="text-uppercase">Jumlah Menu</span>
-                            <h4 id="total" class="mb-0 mt-2">{{ $menu->count() }} <i class="fa fa-level-up font-12"></i></h4>
+                            <span class="text-uppercase">Jumlah Konten</span>
+                            <h4 id="total" class="mb-0 mt-2">{{ $konten->count() }} <i class="fa fa-level-up font-12"></i></h4>
                             <small class="text-muted">Analytics for last week</small>
                         </div>
                         <div class="sparkline" data-type="line" data-spot-Radius="0" data-offset="90" data-width="100%"
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modaladd">Tambah Menu Baru</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modaladd">Tambah Konten Baru</button>
                 </div>
                 <div class="col-lg-12" style="margin-top: 20px">
                     <div class="card">
@@ -48,7 +48,8 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Image</th>
-                                            <th>Nama Menu</th>
+                                            <th>Menu</th>
+                                            <th>Deskripsi</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </thead>
@@ -57,7 +58,8 @@
                                         <tr>
                                             <th style="width: 5%">No</th>
                                             <th style="width: 10%">Image</th>
-                                            <th>Nama Menu</th>
+                                            <th>Menu</th>
+                                            <th>Deskripsi</th>
                                             <th style="width: 20%">Opsi</th>
                                         </tr>
                                     </tfoot>
@@ -75,7 +77,7 @@
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">BUAT MENU BARU</h5>
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">BUAT KONTEN BARU</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -83,15 +85,21 @@
                 <form id="formadd">@csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" name="menu_name"
-                                placeholder="Nama Menu" required>
+                            <textarea name="konten_desc" id="konten_desc" class="form-control" cols="30" rows="2" placeholder="deskripsi..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <select name="menu_id" id="menu_id" class="form-control">
+                                <option value="">Menu</option>
+                                @foreach ($menu as $item)
+                                    <option value="{{$item->id}}">{{$item->menu_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <div class="custom-file">
                                 <input type="file" name="image" class="custom-file-input" id="inputGroupFile01"
                                     accept="image/*" onchange="showPreview(event);" required>
-                                <p class="custom-file-label" id="label_img" for="inputGroupFile01">Chose
-                                    Image</p>
+                                <p class="custom-file-label" id="label_img" for="inputGroupFile01">Brosur Image</p>
                             </div>
                             <div class="preview" style="max-width: 100%; margin-top: 20px">
                                 <img style="max-width: 300px" id="inputGroupFile01-preview" src="">
@@ -109,7 +117,7 @@
         <!-- /.modal-dialog -->
     </div>
 
-    <div class="modal fade bs-example-modal-xl-2" id="modaledit" tabindex="-1" role="dialog"
+    {{-- <div class="modal fade bs-example-modal-xl-2" id="modaledit" tabindex="-1" role="dialog"
         aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
@@ -150,6 +158,55 @@
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
+    </div> --}}
+
+    <div class="modal fade bs-example-modal-xl-2" id="modaledit" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">UPDATE KONTEN</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="formedit">@csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="hidden" name="id" id="id" class="form-control">
+                            <textarea name="konten_desc" id="konten_desc" class="form-control" cols="30" rows="2" placeholder="deskripsi..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <select name="menu_id" id="menu_id" class="form-control">
+                                <option value="">Menu</option>
+                                @foreach ($menu as $item)
+                                    <option value="{{$item->id}}">{{$item->menu_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="inputGroupFile02"
+                                        accept="image/*" onchange="showPreview2(event);">
+                                    <p class="custom-file-label" id="label_img2" for="inputGroupFile01">Update
+                                        Image ?</p>
+                                </div>
+                                <div class="preview2" style="max-width: 100%; margin-top: 20px">
+                                    <img style="max-width: 300px" id="inputGroupFile02-preview" src="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="submit" id="btnedit" class="btn btn-sm btn-primary" value="SUBMIT">
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
 
     <div class="modal fade bs-example-modal-xl" id="modaldel" tabindex="-1" role="dialog"
@@ -157,7 +214,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Delete Menu</h5>
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Delete Konten</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -215,11 +272,13 @@
         $('#modaledit').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
-            var menu_name = button.data('menu_name')
+            var menu_id = button.data('menu_id')
             var image = button.data('image')
+            var konten_desc = button.data('konten_desc')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #menu_name').val(menu_name);
+            modal.find('.modal-body #menu_id').val(menu_id);
+            modal.find('.modal-body #konten_desc').val(konten_desc);
             var src = image;
             var preview2 = document.getElementById("inputGroupFile02-preview");
             preview2.src = image;
@@ -234,7 +293,7 @@
                 buttons: [
                     'colvis'
                 ],
-                ajax: "/be-menu",
+                ajax: "/be-konten",
                 columns: [
 
                     {
@@ -250,8 +309,12 @@
                         name: 'image'
                     },
                     {
-                        data: 'menu_name',
-                        name: 'menu_name'
+                        data: 'menu',
+                        name: 'menu.menu_name'
+                    },
+                    {
+                        data: 'konten_desc',
+                        name: 'konten_desc'
                     },
                     {
                         data: 'opsi',
@@ -275,7 +338,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: "POST",
-                url: "/be-menu-post",
+                url: "/be-konten-post",
                 data: formData,
                 cache: false,
                 contentType: false,
@@ -296,7 +359,7 @@
                         var preview = document.getElementById("inputGroupFile01-preview");
                         preview.src = '';
                         $.ajax({
-                            url: "/be-menu-total",
+                            url: "/be-konten-total",
                             success: function(result) {
                                 $("#total").html(result.total);
                             }
@@ -314,12 +377,12 @@
                         var values = '';
 
                         jQuery.each(response.message, function(key, value) {
-                            values += value
+                            values += '<p>'+value+'</p>';
                         });
                         toastr.error(values);
                         swal({
                             title: "Maaf",
-                            text: values,
+                            html: values,
                             type: "error",
                         });
                     }
@@ -332,7 +395,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: "POST",
-                url: "/be-menu-delete",
+                url: "/be-konten-delete",
                 data: formData,
                 cache: false,
                 contentType: false,
@@ -350,7 +413,7 @@
                         $('#btndel').attr('disabled', false);
                         $('#modaldel').modal('hide');
                         $.ajax({
-                            url: "/be-menu-total",
+                            url: "/be-konten-total",
                             success: function(result) {
                                 $("#total").html(result.total);
                             }
@@ -387,7 +450,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: "POST",
-                url: "/be-menu-post",
+                url: "/be-konten-post",
                 data: formData,
                 cache: false,
                 contentType: false,

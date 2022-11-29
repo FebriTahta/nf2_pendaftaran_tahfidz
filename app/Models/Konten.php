@@ -18,4 +18,9 @@ class Konten extends Model
     {
         return $this->belongsTo(Menu::class);
     }
+
+    public function getImageAttribute($value)
+    {
+        return asset('konten_image/'.$value);
+    }
 }
