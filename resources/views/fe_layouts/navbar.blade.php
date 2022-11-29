@@ -9,7 +9,7 @@
     <meta property="og:image" content="{{asset('x.jpg')}}" />
     <meta property="og:description" content="Telah dibuka pendaftaran santri tahfidz Nurul Falah 2 Periode 2023 - 2024" />
     <meta property="og:url" content="http://nf2.nurulfalah.org" />
-    <meta name="theme-color" content="#5FA570">
+    <meta name="theme-color" content="#6D9886">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="twitter:card" content="summary_large_image">
     <meta property='og:image:width' content='1200' />

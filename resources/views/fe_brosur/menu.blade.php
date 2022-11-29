@@ -60,6 +60,18 @@
         text-align: center;
         margin-top: 10px;
     }
+
+    @media only screen and (min-width: 701px) {
+        .konten {
+            min-height: 1000px;
+        }
+    }
+
+    @media only screen and (max-width: 70px) {
+        .konten {
+            min-height: 500px;
+        }
+    }
 </style>
 
 <div class="konten" style="min-height: 1000px; background-color: #6D9886; width: 100%">
