@@ -82,7 +82,7 @@
     }
 </style>
 
-<div class="konten" style="min-height: 1000px; background-color: #6D9886; width: 100%">
+<div class="konten" style="background-color: #6D9886; width: 100%">
     <div class="profile">
         @if ($profile !== null)
             <img src="{{$profile->image}}" alt="">
