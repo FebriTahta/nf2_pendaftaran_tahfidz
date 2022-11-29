@@ -488,10 +488,20 @@
                                         <label class="text-primary">10. Scan bukti transfer pembayaran formulir </label><br>
                                         <input type="file" name="dokumen_tfformulir" class="form-control">
                                     </div>
+
+                                    <div class="form-group">
+                                        <div class="kembali" style="width: 300px">
+                                            <button href="#" type="submit" class="btn btn-primary bg-primary" style="color: white; padding: 10px; border-radius: 5px;">
+                                                <i class="fa fa-submit"></i>  Daftar Sekarang
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="submit" style="min-width: 200px; text-align: center" class="before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white sm:block text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">
+                                {{-- <button type="submit" style="min-width: 200px; text-align: center" class="before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white sm:block text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">
                                     Daftar Sekarang
-                                </button>
+                                </button> --}}
+
+                                
                             </div>
                         </form>
                     </div>
@@ -542,4 +552,65 @@
         <p style="color: white;">Nurul Falah 2 Pandaan {{date('Y')}}</p>
     </div>
 </div>
+@endsection
+
+@section('script')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+<script>
+    $('#formsubmit').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "/submit-form-tahfidz",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                // beforeSend: function() {
+                //     $('#id_button').attr('disabled', 'disabled');
+                //     $('#id_button').val('Processing');
+                // },
+                success: function(response) {
+                    if (response.status == 200) {
+                        // swal({
+                        //     title: "SUCCESS!",
+                        //     text: response.message,
+                        //     type: "success"
+                        // })
+                        // .then(okay => {
+                        //     if (okay) {
+                        //         window.location.href = "/admin/list-posting";
+                        //     }
+                        // });
+                        toastr.success(response.message);
+                        swal({
+                            title:"Ok",
+                            text : response.message,
+                            type :"success",
+                        });
+                        
+                    } else {
+                        var values = '';
+                        jQuery.each(response.message, function (key, value) {
+                            values += '<p>'+ value +'</p>'
+                        });
+                        swal({
+                            title : "Maaf",
+                            html : values,
+                            type : "error",
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+</script>
+
 @endsection
