@@ -83,9 +83,10 @@
         }
 
         .menu span {
-        font-size: 14px;
+        font-size: 15px;
         color: #62a091;
-    }
+            font-weight: 600;
+        }
     }
 </style>
 
