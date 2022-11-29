@@ -38,10 +38,7 @@
         margin: 0 auto;
     }
 
-    .menu span {
-        font-size: 18px;
-        color: #62a091;
-    }
+   
     
     .sosmed {
         padding-top: 20px;
@@ -69,6 +66,11 @@
         .foot {
             margin-top: 120px !important;
         }
+
+        .menu span {
+        font-size: 18px;
+        color: #62a091;
+    }
     }
 
     @media only screen and (max-width: 700px) {
@@ -79,6 +81,11 @@
         .foot {
             margin-top: 50px !important;
         }
+
+        .menu span {
+        font-size: 14px;
+        color: #62a091;
+    }
     }
 </style>
 
