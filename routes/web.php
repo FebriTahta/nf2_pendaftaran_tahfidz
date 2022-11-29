@@ -7,7 +7,7 @@ use App\Http\Controllers\PageCont;
 use App\Http\Controllers\BrosurController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SantriController;
-use App\Http\Controllers\ProfileCOntroller;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KontenController;
 use App\Http\Middleware\CheckRole;
 
