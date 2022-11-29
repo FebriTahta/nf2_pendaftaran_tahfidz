@@ -73,7 +73,7 @@
 
     @media only screen and (max-width: 700px) {
         .konten {
-            min-height: 700px !important;
+            min-height: 750px !important;
         }
 
         .foot {
