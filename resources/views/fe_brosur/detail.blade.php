@@ -571,7 +571,7 @@
             <div class="deskripsi" style="padding: 3%">
                 <div class="card" style="padding: 20px; background-color: white; max-width: 600px; border-radius: 10px">
                     <h2 style="font-size: 18px">Halaman ini belum tersedia</h2>
-                    <p style="line-height: 20px; font-size: 18px">Harap menunggu mengenai info ini</p>
+                    <p style="line-height: 20px; font-size: 18px">Harap menunggu mengenai informasi ini</p>
                     <div class="kembali" style="margin-top: 20px">
                         <a href="/" class="btn btn-primary bg-primary" style="color: white; padding: 7px; border-radius: 5px;">
                             <i class="fa fa-undo"></i>  kembali
