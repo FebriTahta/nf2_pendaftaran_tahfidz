@@ -26,7 +26,7 @@
     }
 
     .profile {
-        padding-top: 65px;
+        padding-top: 40px;
         text-align: center;
     }
     .profile img {
@@ -88,7 +88,7 @@
         }
     }
 
-    
+
 </style>
 
 <div class="konten" style="min-height: 1000px; background-color: #6D9886; width: 100%">
