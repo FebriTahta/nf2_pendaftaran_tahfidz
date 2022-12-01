@@ -18,7 +18,7 @@ class KontenController extends Controller
             return DataTables::of($data)
             ->addColumn('opsi', function($data){
                 
-                if (substr($data->menu->menu_name,0,6) !== 'lokasi') {
+                if (substr($data->menu->menu_name,0,6) !== 'Lokasi') {
                     # code...
                     $actionBtn = ' <a href="#"class="delete btn btn-info btn-sm" data-id="'.$data->id.'" data-konten_desc="'.$data->konten_desc.'" data-menu_id="'.$data->menu_id.'" data-image="'.$data->image.'"
                     data-toggle="modal" data-target="#modaledit"><i class="text-white fa fa-pencil"></i></a>';
@@ -36,7 +36,7 @@ class KontenController extends Controller
                 
             })
             ->addColumn('menu', function($data){
-               return substr($data->menu->menu_name,0,6);
+               return $data->menu->menu_name;
             })
             ->rawColumns(['opsi','images','menu'])
             ->make(true);
