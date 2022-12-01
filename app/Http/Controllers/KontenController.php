@@ -22,7 +22,7 @@ class KontenController extends Controller
                     # code...
                     $actionBtn = ' <a href="#"class="delete btn btn-info btn-sm" data-id="'.$data->id.'" data-konten_desc="'.$data->konten_desc.'" data-menu_id="'.$data->menu_id.'" data-image="'.$data->image.'"
                     data-toggle="modal" data-target="#modaledit"><i class="text-white fa fa-pencil"></i></a>';
-                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
+                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i> '+substr($data->menu->menu_name,0,6)+'</a>';
                 }else {
                     # code...
                     $actionBtn = ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
