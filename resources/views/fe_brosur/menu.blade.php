@@ -41,7 +41,7 @@
    
     
     .sosmed {
-        padding-top: 20px;
+        padding-top: 50px;
         text-align: center;
         display: flex;
         justify-content: space-between;
@@ -101,7 +101,7 @@
         @endif
     </div>
 
-    <div class="sosmed" style="max-width: 220px" style="padding-top: 50px">
+    <div class="sosmed" style="max-width: 220px">
         @foreach ($sosmed as $item)
             @if ($item->sosmed_name == 'whatsapp')
                 <a href="{{$item->sosmed_link}}">
