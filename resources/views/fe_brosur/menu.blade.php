@@ -55,7 +55,7 @@
     .foot p {
         font-size: 15px !important;
         text-align: center;
-        margin-top: 10px;
+        bottom: 0;
     }
 
     @media only screen and (min-width: 701px) {
