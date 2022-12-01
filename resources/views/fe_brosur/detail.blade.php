@@ -56,6 +56,39 @@
         justify-content: space-between;
         margin: 0 auto;
     }
+
+    @media only screen and (min-width: 701px) {
+        .konten {
+            min-height: 1000px !important;
+        }
+
+        .foot {
+            margin-top: 120px !important;
+        }
+
+        .menu span {
+        font-size: 18px;
+        color: #62a091;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        .konten {
+            min-height: 900px !important;
+        }
+
+        .foot {
+            margin-top: 120px !important;
+        }
+
+        .menu span {
+        font-size: 15px;
+        color: #62a091;
+            font-weight: 600;
+        }
+    }
+
+    
 </style>
 
 <div class="konten" style="min-height: 1000px; background-color: #6D9886; width: 100%">
