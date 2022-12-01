@@ -59,14 +59,12 @@
                             <a href="#App" class="has-arrow"><i class="fa fa-puzzle-piece"></i><span>Tampilan UI</span></a>
                             <ul>
                                 <li><a href="/be-profile">Profile</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="/be-menu">Menu</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="/be-konten">Konten</a></li>
+                                <li><a href="/be-sosmed">Sosmed / Kontak</a></li>
                             </ul>
                         </li>
+                        
                     </ul>
                 </nav>
             </div>

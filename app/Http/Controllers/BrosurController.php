@@ -5,6 +5,7 @@ use App\Models\Profile;
 use App\Models\Konten;
 use App\Models\Menu;
 use App\Models\Program;
+use App\Models\Sosmed;
 use Illuminate\Http\Request;
 
 class BrosurController extends Controller
@@ -12,9 +13,10 @@ class BrosurController extends Controller
     public function index(Request $request)
     {
         // return view('fe_brosur.index');
+        $sosmed  = Sosmed::get();
         $profile = Profile::first();
         $menu    = Menu::get();
-        return view('fe_brosur.menu',compact('profile','menu'));
+        return view('fe_brosur.menu',compact('profile','menu','sosmed'));
     }
 
     public function pendaftaran_sukses(Request $request)

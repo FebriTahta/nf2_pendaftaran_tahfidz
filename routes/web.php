@@ -10,6 +10,7 @@ use App\Http\Controllers\SantriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KontenController;
 use App\Http\Middleware\CheckRole;
+use App\Http\Controllers\SosmedController;
 
 
 /*
@@ -53,6 +54,13 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin,super_admin']], function
         Route::post('/be-profile-post' ,'post_profile');
         Route::post('/be-profile-delete','delete_profile');
     });
+    Route::controller(SosmedController::class)->group(function() {
+        Route::get('/be-sosmed','index_sosmed');
+        Route::post('/be-sosmed-post','post_sosmed');
+        Route::post('/be-sosmed-delete','delete_sosmed');
+        Route::get('/be-sosmed-total','total');
+    });
+    
 });
 
 

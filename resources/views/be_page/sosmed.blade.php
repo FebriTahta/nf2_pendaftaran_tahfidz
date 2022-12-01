@@ -6,11 +6,11 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h2>Program</h2>
+                        <h2>Sosmed</h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-dashboard"></i></a></li>
-                            <li class="breadcrumb-item">Program</li>
-                            <li class="breadcrumb-item active">Manajemen Program</li>
+                            <li class="breadcrumb-item">Sosmed</li>
+                            <li class="breadcrumb-item active">Manajemen Sosmed</li>
                         </ul>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card number-chart">
                         <div class="body">
-                            <span class="text-uppercase">Jumlah Program</span>
-                            <h4 class="mb-0 mt-2">{{$program->count()}} <i class="fa fa-level-up font-12"></i></h4>
+                            <span class="text-uppercase">Jumlah Sosmed</span>
+                            <h4 class="mb-0 mt-2">{{$sosmed->count()}} <i class="fa fa-level-up font-12"></i></h4>
                             <small class="text-muted">Analytics for last week</small>
                         </div>
                         <div class="sparkline" data-type="line" data-spot-Radius="0" data-offset="90" data-width="100%"
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modaladd">Tambah Program Baru</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modaladd">Tambah Sosmed / Kontak Baru</button>
                 </div>
                 <div class="col-lg-12" style="margin-top: 20px">
                     <div class="card">
@@ -45,7 +45,8 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Program</th>
+                                            <th>Nama Sosmed</th>
+                                            <th>Link Sosmed</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </thead>
@@ -53,7 +54,8 @@
                                     <tfoot>
                                         <tr>
                                             <th style="width: 5%">No</th>
-                                            <th>Nama Program</th>
+                                            <th>Nama Sosmed</th>
+                                            <th>Link Sosmed</th>
                                             <th style="width: 20%">Opsi</th>
                                         </tr>
                                     </tfoot>
@@ -71,7 +73,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Buat Program Baru</h5>
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Buat Sosmed / Kontak Baru</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -79,8 +81,16 @@
                 <div class="modal-body">
                     <form id="formadd">@csrf
                         <div class="form-group">
-                            <label>Nama Program</label>
-                            <input type="text" class="form-control" name="program_name">
+                            <select name="sosmed_name" id="sosmed_name" class="form-control">
+                                <option value="">Nama Sosmed</option>
+                                <option value="whatsapp">whatsapp</option>
+                                <option value="facebook">facebook</option>
+                                <option value="instagram">instagram</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Link Sosmed</label>
+                            <input type="text" class="form-control" name="sosmed_link">
                         </div>
                         <div class="form-group">
                             <input type="submit" id="btnadd" class="btn btn-primary" value="Submit">
@@ -104,9 +114,17 @@
                 <div class="modal-body">
                     <form id="formedit">@csrf
                         <div class="form-group">
-                            <label>Nama Program</label>
                             <input type="hidden" class="form-control" name="id" id="id">
-                            <input type="text" class="form-control" id="program_name" name="program_name">
+                            <select name="sosmed_name" id="sosmed_name" class="form-control">
+                                <option value="">Nama Sosmed</option>
+                                <option value="whatsapp">whatsapp</option>
+                                <option value="facebook">facebook</option>
+                                <option value="instagram">instagram</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Link Sosmed</label>
+                            <input type="text" class="form-control" name="sosmed_link" id="sosmed_link">
                         </div>
                         <div class="form-group">
                             <input type="submit" id="btnedit" class="btn btn-primary" value="Submit">
@@ -122,7 +140,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Delete Program</h5>
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Hapus Sosmed</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -130,7 +148,7 @@
                 <div class="modal-body">
                     <form id="formdel">@csrf
                         <div class="form-group">
-                            <label style="color: red">Anda yakin akan menghapus program tersebut dari sistem ?</label>
+                            <label style="color: red">Anda yakin akan menghapus sosmed tersebut dari sistem ?</label>
                             <input type="hidden" class="form-control" name="id" id="id">
                         </div>
                         <div class="form-group">
@@ -166,7 +184,7 @@
                 buttons: [
                     'colvis'
                 ],
-                ajax: "/be-program",
+                ajax: "/be-sosmed",
                 columns: [
 
                     {
@@ -178,8 +196,12 @@
                         }
                     },
                     {
-                        data: 'program_name',
-                        name: 'program_name'
+                        data: 'sosmed_name',
+                        name: 'sosmed_name'
+                    },
+                    {
+                        data: 'sosmed_link',
+                        name: 'sosmed_link'
                     },
                     {
                         data: 'opsi',
@@ -194,10 +216,12 @@
         $('#modaledit').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
-            var program_name = button.data('program_name')
+            var sosmed_name = button.data('sosmed_name')
+            var sosmed_link = button.data('sosmed_link')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #program_name').val(program_name);
+            modal.find('.modal-body #sosmed_name').val(sosmed_name);
+            modal.find('.modal-body #sosmed_link').val(sosmed_link);
         })
 
         $('#modaldel').on('show.bs.modal', function (event) {
@@ -212,7 +236,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: "POST",
-                url: "/be-program-post",
+                url: "/be-sosmed-post",
                 data: formData,
                 cache: false,
                 contentType : false,
@@ -229,12 +253,19 @@
                         $('#btnadd').val('Submit');
                         $('#btnadd').attr('disabled', false);
                         $('#modaladd').modal('hide');
-                        toastr.success(response.message);
+                        var values = '';
+
+                        jQuery.each(response.message, function (key, value) {
+                            values += '<p>'+value+'</p>'
+                        });
+
+                        toastr.success(values);
                         swal({
                             title:"Ok",
-                            text : response.message,
+                            html : values,
                             type :"success",
                         });
+
                     }else{
                         $('#btnadd').val('Submit');
                         $('#btnadd').attr('disabled', false);
@@ -242,12 +273,12 @@
                         var values = '';
 
                         jQuery.each(response.message, function (key, value) {
-                            values += value
+                            values += '<p>'+value+'</p>'
                         });
                         toastr.error(values);
                         swal({
                             title : "Maaf",
-                            text : values,
+                            html : values,
                             type : "error",
                         });
                     }
@@ -260,7 +291,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: "POST",
-                url: "/be-program-delete",
+                url: "/be-sosmed-delete",
                 data: formData,
                 cache: false,
                 contentType : false,
@@ -309,7 +340,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: "POST",
-                url: "/be-program-post",
+                url: "/be-sosmed-post",
                 data: formData,
                 cache: false,
                 contentType : false,
