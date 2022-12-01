@@ -98,7 +98,7 @@
                         <div class="form-group">
                             <div class="custom-file">
                                 <input type="file" name="image" class="custom-file-input" id="inputGroupFile01"
-                                    accept="image/*" onchange="showPreview(event);">
+                                    accept="image/*" onchange="showPreview(event);" required>
                                 <p class="custom-file-label" id="label_img" for="inputGroupFile01">Brosur Image</p>
                             </div>
                             <div class="preview" style="max-width: 100%; margin-top: 20px">
