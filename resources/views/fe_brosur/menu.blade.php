@@ -7,7 +7,7 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     }
     .profile {
-        padding-top: 65px;
+        padding-top: 40px;
         text-align: center;
     }
     .profile img {
