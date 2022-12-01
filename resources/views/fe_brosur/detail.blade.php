@@ -560,7 +560,6 @@
                 </div>
             </div>
 
-
             <div class="brosur" style="padding: 3%">
                 <div class="card" style="background-color: white; max-width: 600px;  border-radius: 20px; padding: 1%">
                     <img style="padding-top: 20px; margin-bottom: 10px" src="{{$konten->image}}" alt="">
