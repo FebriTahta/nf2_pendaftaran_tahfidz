@@ -79,7 +79,7 @@
         }
 
         .foot {
-            bottom: 0 !important;
+            margin-top: 100px !important;
         }
 
         .menu span {
