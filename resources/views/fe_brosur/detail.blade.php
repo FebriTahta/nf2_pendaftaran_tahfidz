@@ -50,7 +50,7 @@
     }
 
     .sosmed {
-        padding-top: 50px;
+        padding-top: 40px;
         text-align: center;
         display: flex;
         justify-content: space-between;
