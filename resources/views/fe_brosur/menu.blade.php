@@ -101,7 +101,7 @@
         @endif
     </div>
 
-    <div class="sosmed" style="max-width: 220px">
+    <div class="sosmed" style="max-width: 220px" style="margin-top: 50px">
         @foreach ($sosmed as $item)
             @if ($item->sosmed_name == 'whatsapp')
                 <a href="{{$item->sosmed_link}}">
