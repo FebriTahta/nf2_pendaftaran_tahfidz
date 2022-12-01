@@ -55,7 +55,7 @@
     .foot p {
         font-size: 15px !important;
         text-align: center;
-        bottom: 0;
+        margin-top: 10px;
     }
 
     @media only screen and (min-width: 701px) {
@@ -79,7 +79,7 @@
         }
 
         .foot {
-            margin-top: 50px !important;
+            bottom: 0 !important;
         }
 
         .menu span {
