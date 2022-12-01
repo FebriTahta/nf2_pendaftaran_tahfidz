@@ -70,18 +70,23 @@
     </div>
 
     <div class="sosmed" style="max-width: 220px">
-        <a href="">
-            <i class="fa fa-phone" style="color: white; font-size: 30px;"></i>
-        </a>
-        <a href="">
-            <i class="fab fa-whatsapp" style="color: white; font-size: 30px;"></i>
-        </a>
-        <a href="">
-            <i class="fab fa-facebook" style="color: white; font-size: 30px;"></i>
-        </a>
-        <a href="">
-            <i class="fab fa-instagram" style="color: white; font-size: 30px;"></i>
-        </a>
+        @foreach ($sosmed as $item)
+            @if ($item->sosmed_name == 'whatsapp')
+                <a href="{{$item->sosmed_link}}">
+                    <i class="fab fa-whatsapp" style="color: white; font-size: 30px;"></i>
+                </a>
+            @endif
+            @if ($item->sosmed_name == 'facebook')
+                <a href="{{$item->sosmed_link}}">
+                    <i class="fab fa-facebook" style="color: white; font-size: 30px;"></i>
+                </a>
+            @endif
+            @if ($item->sosmed_name == 'instagram')
+                <a href="{{$item->sosmed_link}}">
+                    <i class="fab fa-instagram" style="color: white; font-size: 30px;"></i>
+                </a>
+            @endif
+        @endforeach
     </div>
 
     @if ($url == 'form' || $url == 'form-pendaftaran')

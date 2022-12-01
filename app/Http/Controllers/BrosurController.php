@@ -32,13 +32,15 @@ class BrosurController extends Controller
             $konten = Konten::where('menu_id', $menu->id)->first();
             $profile = Profile::first();
             $program = Program::where('program_name','tahfidz')->first();
-            return view('fe_brosur.detail', compact('konten','menu','profile','url','program'));
+            $sosmed  = Sosmed::get();
+            return view('fe_brosur.detail', compact('konten','menu','profile','url','program','sosmed'));
         }else {
             # code...
             $menu = Menu::where('menu_link',$url)->first();
             $konten = Konten::where('menu_id', $menu->id)->first();
             $profile = Profile::first();
-            return view('fe_brosur.detail', compact('konten','menu','profile','url'));
+            $sosmed  = Sosmed::get();
+            return view('fe_brosur.detail', compact('konten','menu','profile','url','sosmed'));
         }
        
     }
