@@ -20,7 +20,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card number-chart">
                         <div class="body">
-                            <span class="text-uppercase">Jumlah Program</span>
+                            <span class="text-uppercase">Jumlah Santri</span>
                             <h4 class="mb-0 mt-2" id="total">??? <i class="fa fa-level-up font-12"></i></h4>
                             <small class="text-muted">Analytics for last week</small>
                         </div>
