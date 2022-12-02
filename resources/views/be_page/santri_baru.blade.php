@@ -6,11 +6,11 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h2>Program </h2>
+                        <h2>Santri Baru </h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-dashboard"></i></a></li>
-                            <li class="breadcrumb-item">Program</li>
-                            <li class="breadcrumb-item active">Manajemen Program</li>
+                            <li class="breadcrumb-item">Santri Baru</li>
+                            <li class="breadcrumb-item active">Manajemen Santri Baru (Audit Data)</li>
                         </ul>
                     </div>
                 </div>
@@ -30,9 +30,9 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12">
+                {{-- <div class="col-lg-12">
                     <button class="btn btn-primary" data-toggle="mdoal" data-target="#modaladd">Tambah Program Baru</button>
-                </div>
+                </div> --}}
                 <div class="col-lg-12" style="margin-top: 20px">
                     <div class="card">
                         <div class="table-responsive">
