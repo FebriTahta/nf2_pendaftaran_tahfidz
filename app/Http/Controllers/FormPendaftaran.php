@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Support\Str;
 use App\Models\Program;
+use App\Models\Profile;
 use App\Models\Santri;
 use App\Models\Dokumen;
 use App\Models\Ayah;
@@ -296,15 +297,16 @@ class FormPendaftaran extends Controller
 
                     // commit semua perintah insert
                     DB::commit();
-                    $wa_admin = '081329146514';
-                    $tots     = Santri::where('status','daftar')->count() - 1;
+                    $profile = Profile::first();
+                    $wa_admin = $profile->profile_nomor_admin;
+                    $tots     = Santri::where('status','daftar')->count();
                     $total_santri_baru = '';
                     if ($tots > 0) {
                         # code...
-                        $total_santri_baru = 'dan '.$tots.' santri baru lainnya yang belum di audit';
+                        $total_santri_baru = 'dan '.($tots - 1).' santri baru lainnya yang belum di audit';
                     }else {
                         # code...
-                        $total_santri_baru = '';
+                        $total_santri_baru = 'dan '.($tots).' santri baru lainnya yang belum di audit';
                     }
                     
                     $this->send_wa_admin($wa_admin, $santri->santri_name, $total_santri_baru);

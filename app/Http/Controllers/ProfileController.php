@@ -23,6 +23,7 @@ class ProfileController extends Controller
                         'profile_desc' => $exist->profile_desc,
                         'id' => $exist->id,
                         'label' => substr($exist->image,-14),
+                        'profile_nomor_admin' => $exist->profile_nomor_admin
                     ]
                 ]);
 
@@ -44,7 +45,8 @@ class ProfileController extends Controller
     {
         $validator = Validator::make($request->all(),
         [
-            'profile_desc' => 'required'
+            'profile_desc' => 'required',
+            'profile_nomor_admin' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -75,7 +77,8 @@ class ProfileController extends Controller
                     ],
                     [
                         'image' => $filename,
-                        'profile_desc' => $request->profile_desc
+                        'profile_desc' => $request->profile_desc,
+                        'profile_nomor_admin' => $request->profile_nomor_admin,
                     ]
                 );
     
@@ -91,7 +94,8 @@ class ProfileController extends Controller
                         'id' => $request->id
                     ],
                     [
-                        'profile_desc' => $request->profile_desc
+                        'profile_desc' => $request->profile_desc,
+                        'profile_nomor_admin' => $request->profile_nomor_admin
                     ]
                 );
     

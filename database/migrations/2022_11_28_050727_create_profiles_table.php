@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->string('profile_desc');
             $table->string('image')->nullable();
+            $table->string('profile_nomor_admin')->nullable();
             $table->timestamps();
         });
     }

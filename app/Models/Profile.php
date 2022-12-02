@@ -10,7 +10,8 @@ class Profile extends Model
     use HasFactory;
     protected $fillable = [
         'image',
-        'profile_desc'
+        'profile_desc',
+        'profile_nomor_admin'
     ];
 
     public function getImageAttribute($value)

@@ -75,6 +75,18 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <h6>Nomor Telpon Admin (whatsapp penerima notifikasi pendaftaran)</h6>
+                                        <div class="row clearfix">
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="form-group section-add">
+                                                    <input type="hidden" id="id" name="id"
+                                                        class="form-control">
+                                                    <input type="text" id="profile_nomor_admin" name="profile_nomor_admin"
+                                                        class="form-control" placeholder="08xxxxxxxxxx">
+                                                </div>
+                                            </div>
+                                        </div>
                                         <input type="submit" class="btn btn-primary" id="btnadd"
                                             value="Update">&nbsp;&nbsp;
                                     </div>
@@ -257,10 +269,12 @@
                 url: "/be-profile",
                 success: function(response) {
                     if (response.status == 200) {
+                        console.log(response.data);
                         $('#profile_desc').val(response.data.profile_desc);
                         $('.section-reset #id').val(response.data.id);
                         $('.section-add #id').val(response.data.id);
                         $('#label_img').html(response.data.label);
+                        $('#profile_nomor_admin').val(response.data.profile_nomor_admin);
                         var preview = document.getElementById("inputGroupFile01-preview");
                         preview.src = response.data.image;
                         console.log(response.data.image);
