@@ -50,8 +50,15 @@
                                     Master</span></a>
                             <ul>
                                 <li><a href="/be-program">Program</a></li>
-                                <li><a href="/be-santri-baru">Santri Baru <span class="badge badge-info float-right">1
+                                <li><a href="/be-santri-baru">Santri Baru 
+                                    @php
+                                        $santri_baru = App\Models\Santri::where('status','daftar')->count();
+                                    @endphp
+                                    @if ($santri_baru > 0)
+                                        <span class="badge badge-info float-right">{{$santri_baru}}
                                             new</span></a></li>
+                                    @endif
+                                    
                                 <li><a href="/be-santri-semua">Seluruh Santri</a></li>
                             </ul>
                         </li>
