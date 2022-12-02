@@ -133,6 +133,12 @@
                         <i class="fa fa-undo"></i>  kembali
                     </a>
                 </div>
+                <p style="margin-top: 20px">Usah mendaftar ? ingin merubah data anda ?</p>
+                <div class="kembali" style="margin-top: 20px">
+                    <a href="#" class="btn btn-primary bg-primary" style="color: white; padding: 7px; border-radius: 5px;">
+                          Audit Data Saya  &nbsp; <i class="fa fa-forward"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -148,6 +154,12 @@
                                         <input id="property-title" name="program_id"
                                             class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
                                             type="hidden" placeholder="..." value="{{$program->id}}">
+                                    </div>
+
+                                    <div class="mb-[45px] col-span-12 md:col-span-12">
+                                        <input id="property-title" name="status"
+                                            class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
+                                            type="hidden" placeholder="..." value="daftar">
                                     </div>
                                 </div>
                             @endif
@@ -315,7 +327,7 @@
                                 <div class="mb-[45px] col-span-4 md:col-span-4">
                                     <input id="Propertyinfo1" name="tgl_ayah"
                                         class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                        type="text" placeholder="Tgl Lahir" >
+                                        type="number" placeholder="Tgl Lahir" >
                                 </div>
                                 <div class="mb-[45px] col-span-4 md:col-span-4">
                                     <div class="relative">
@@ -408,7 +420,7 @@
                                 <div class="mb-[45px] col-span-4 md:col-span-4">
                                     <input id="Propertyinfo1" name="tgl_ibu"
                                         class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-[#FD6400] focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px] "
-                                        type="text" placeholder="Tgl Lahir" >
+                                        type="number" placeholder="Tgl Lahir" >
                                 </div>
                                 <div class="mb-[45px] col-span-4 md:col-span-4">
                                     <div class="relative">

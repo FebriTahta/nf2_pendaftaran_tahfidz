@@ -33,6 +33,7 @@ class CreateSantrisTable extends Migration
             $table->string('santri_statuskeluarga');
             $table->string('santri_asalsekolah');
             $table->string('santri_alamatsekolah')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

@@ -27,7 +27,8 @@ class Santri extends Model
         'santri_statuskeluarga',
         'santri_asalsekolah',
         'santri_alamatsekolah',
-        'santri_slug'
+        'santri_slug',
+        'status'
     ];
 
     public function ayah()
@@ -43,5 +44,10 @@ class Santri extends Model
     public function program()
     {
         return $this->belongsTo(Program::class);
+    }
+
+    public function dokumen() 
+    {
+        return $this->hasOne(Dokumen::class);
     }
 }

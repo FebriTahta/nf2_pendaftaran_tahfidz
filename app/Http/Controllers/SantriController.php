@@ -7,14 +7,91 @@ use App\Models\Ayah;
 use App\Models\Ibu;
 use App\Models\Dokumentahfidz;
 use App\Models\Dokumen;
+use DataTables;
+use Image;
+use File;
 use DB;
 use Illuminate\Http\Request;
 
 class SantriController extends Controller
 {
     public function index_santri_baru(Request $request) {
+       
+        if ($request->ajax()) {
+            # code...
+            $data = Santri::where('status','daftar')->with('ayah','ibu','dokumen')->get();
+            return DataTables::of($data)
+            ->addColumn('ayah', function($data){
+                if ($data->ayah !== null) {
+                    # code...
+                    return '<a href="#">Data Ayah</a>';
+                }else {
+                    # code...
+                    return '<a href="#" class="text-danger">Kosong</a>';
+                }
+            })
+            ->addColumn('ibu', function($data) {
+                if ($data->ibu !== null) {
+                    # code...
+                    return '<a href="#">Data Ibu</a>';
+                }else {
+                    # code...
+                    return '<a href="#" class="text-danger">Kosong</a>';
+                }
+            })
+            ->addColumn('dokumen', function($data){
+                if ($data->data !== null) {
+                    # code...
+                    return '<a href="#">Dokumen</a>';
+                }else {
+                    # code...
+                    return '<a href="#" class="text-danger">Kosong</a>';
+                }
+            })
+            ->addColumn('opsi', function($data){
+                $actionBtn = ' <a href="#"class="delete btn btn-info btn-sm" data-id="'.$data->id.'" data-santri_name="'.$data->santri_name.'"
+                    data-toggle="modal" data-target="#modaledit"><i class="text-white fa fa-pencil"></i></a>';
+                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
+                return $actionBtn;
+            })
+            ->rawColumns(['opsi','dokumen','ibu','ayah'])
+            ->make(true);
+        }
+       
+
         return view('be_page.santri_baru');
     }
+
+    public function total_santri_baru()
+    {
+        $data = Santri::where('status','daftar')->count();
+        if ($data > 0) {
+            # code...
+            return response()->json([
+                'status' => 200,
+                'message' => ['menampilkan data santri baru - '.$data],
+                'total' => $data,
+            ]);
+        }
+        else {
+            # code...
+            return response()->json([
+                'status' => 400,
+                'message' => ['data santri baru tidak ditemukan - '.$data],
+                'total' => $data,
+            ]);
+        }
+    }
+
+
+
+
+
+
+
+
+
+    // post santri from admin
 
     public function post_santri(Request $request)
     {
