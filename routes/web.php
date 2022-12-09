@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin,super_admin']], function
         Route::get('/be-santri-baru','index_santri_baru');
         Route::get('/be-santri-baru-total','total_santri_baru');
         Route::get('/be-santri-semua','index_santri_semua');
+        Route::get('be-santri-data-ayah','santri_data_ayah');
     });
     Route::controller(MenuController::class)->group(function() {
         Route::get('/be-menu','index_menu');

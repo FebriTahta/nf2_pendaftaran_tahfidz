@@ -59,7 +59,7 @@
                                             new</span></a></li>
                                     @endif
                                     
-                                <li><a href="/be-santri-semua">Seluruh Santri</a></li>
+                                <li><a href="#">Seluruh Santri</a></li>
                             </ul>
                         </li>
                         <li>

@@ -24,7 +24,9 @@ class SantriController extends Controller
             ->addColumn('ayah', function($data){
                 if ($data->ayah !== null) {
                     # code...
-                    return '<a href="#">Data Ayah</a>';
+                    return '<a href="#"class="data_ayah" data-toggle="modal" data-target="#modalauditayah"
+                    data-id="'.$data->id.'" data-
+                    >Data Ayah</a>';
                 }else {
                     # code...
                     return '<a href="#" class="text-danger">Kosong</a>';
@@ -33,7 +35,7 @@ class SantriController extends Controller
             ->addColumn('ibu', function($data) {
                 if ($data->ibu !== null) {
                     # code...
-                    return '<a href="#">Data Ibu</a>';
+                    return '<a href="#"class="data_ibu">Data Ibu</a>';
                 }else {
                     # code...
                     return '<a href="#" class="text-danger">Kosong</a>';
@@ -49,10 +51,11 @@ class SantriController extends Controller
                 }
             })
             ->addColumn('opsi', function($data){
-                $actionBtn = ' <a href="#"class="delete btn btn-info btn-sm" data-id="'.$data->id.'" data-santri_name="'.$data->santri_name.'"
+                    $actionBtn = ' <a href="#"class="delete btn btn-info btn-sm" data-id="'.$data->id.'" data-santri_name="'.$data->santri_name.'"
                     data-toggle="modal" data-target="#modaledit"><i class="text-white fa fa-pencil"></i></a>';
                     $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
-                return $actionBtn;
+                    $actionBtn.= ' <a data-target="#modalaudit" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="audit btn btn-primary btn-sm"><i class="fa fa-university"></i></a>';
+                    return $actionBtn;
             })
             ->rawColumns(['opsi','dokumen','ibu','ayah'])
             ->make(true);
@@ -274,6 +277,25 @@ class SantriController extends Controller
                     ]
                 );
             }
+        }
+    }
+
+    public function santri_data_ayah(Request $request, $santri_id){
+        if ($request->ajax()) {
+            # code...
+            $data = Ayah::where('santri_id', $santri_id)->first();
+            return response()->json([
+                'status' => 200,
+                'message'=> ['menampilkan data ayah'],
+                'ayah_name' => $data->ayah_name,
+                'ayah_nik' => $data->ayah_nik,
+                'ayah_tanggallahir' => $data->ayah_tanggallahir,
+                'ayah_tempatlahir' => $data->ayah_tempatlahir,
+                'ayah_pendidikan' => $data->ayah_pendidikan,
+                'ayah_pekerjaan' => $data->ayah_pekerjaan,
+                'ayah_penghasilan' => $data->ayah_penghasilan,
+                'ayah_nohp' => $data->ayah_nohp,
+            ]);
         }
     }
 }

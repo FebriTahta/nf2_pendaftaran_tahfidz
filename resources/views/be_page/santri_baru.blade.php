@@ -97,6 +97,95 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade bs-example-modal-xl" id="modalauditayah" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">AUDIT AYAH</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="#formauditayah">@csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nama Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nik Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tempat Lahir Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tanggal Lahir Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Pendidikan Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Pekerjaan Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Penghasilan Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Telpon Ayah</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary" class="form-control" id="btnauditayah" value="Audit">
+                                 </div>
+                            </div>
+                           
+                        </div>
+                        
+                        
+                       
+                       
+                       
+                        
+                       
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('be_script')
@@ -113,6 +202,11 @@
 
 
     <script>
+         $('#modalauditayah').on('show.bs.modal', function(event) {
+            
+        })
+
+
         $(document).ready(function() {
             $.ajax({
                 url: "/be-santri-baru-total",
